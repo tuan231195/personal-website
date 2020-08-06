@@ -7,3 +7,5 @@
 // You can delete this file if you're not using it
 
 import 'tailwindcss/dist/base.min.css';
+import 'tailwindcss/dist/components.css';
+import 'tailwindcss/dist/utilities.css';

@@ -33,7 +33,8 @@
     "prettier": "2.0.5",
     "tailwindcss": "^1.6.2",
     "twin.macro": "^1.7.0",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "typescript-plugin-tw-template": "^2.0.1"
   },
   "keywords": [
     "gatsby"
