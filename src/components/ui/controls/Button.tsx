@@ -1,5 +1,6 @@
 import React from 'react';
 import 'twin.macro';
+import { Icon, SvgIcon } from '~/components/ui/icons/Icon';
 
 type Props = {
 	size?: 'sm' | 'lg';
@@ -7,6 +8,7 @@ type Props = {
 	rounded?: boolean;
 	textColor?: string;
 	children: any;
+	icon?: SvgIcon;
 };
 export const Button: React.FC<Props> = ({
 	size = 'sm',
@@ -14,6 +16,7 @@ export const Button: React.FC<Props> = ({
 	textColor = 'white',
 	children,
 	rounded = true,
+	icon,
 }) => {
 	const sizeClass =
 		{
@@ -28,10 +31,13 @@ export const Button: React.FC<Props> = ({
 
 	return (
 		<button
-			className={`${bgClass} text-${textColor} ${sizeClass} font-semibold py-2 px-4 ${
+			className={`${bgClass} text-${textColor} ${sizeClass} font-semibold flex items-center py-2 px-4 ${
 				rounded ? 'rounded' : ''
 			}`}
 		>
+			{!!icon && (
+				<Icon size={12} className={'mr-2'} name={icon} color={'white'} />
+			)}
 			{children}
 		</button>
 	);

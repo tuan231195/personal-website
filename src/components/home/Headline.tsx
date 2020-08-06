@@ -15,7 +15,7 @@ export default function Headline() {
 		<Root>
 			<Container>
 				<span>Here</span>
-				<Button>CONTACT ME</Button>
+				<Button icon={'send'}>CONTACT ME</Button>
 			</Container>
 		</Root>
 	);
