@@ -1,4 +1,7 @@
 {
-  "arrowParens": "avoid",
-  "semi": false
+  "singleQuote": true,
+  "useTabs": true,
+  "semi": true,
+  "jsxSingleQuote": true,
+  "trailingComma": "es5"
 }
