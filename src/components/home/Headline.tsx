@@ -1,14 +1,22 @@
 import React from 'react';
 import tw, { styled } from 'twin.macro';
+import { Button } from '~/components/ui/controls/Button';
 
-const HeadlineContainer = styled.div`
-	${tw`flex justify-between`}
+const Root = styled.header`
+	${tw`bg-gray-200 py-5`}
 `;
+
+const Container = styled.div`
+	${tw`container flex justify-between items-center`}
+`;
+
 export default function Headline() {
 	return (
-		<HeadlineContainer>
-			<span>Here</span>
-			<div>Another one</div>
-		</HeadlineContainer>
+		<Root>
+			<Container>
+				<span>Here</span>
+				<Button>CONTACT ME</Button>
+			</Container>
+		</Root>
 	);
 }
