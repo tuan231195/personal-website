@@ -18,6 +18,7 @@ export const Button: React.FC<Props> = ({
 	children,
 	rounded = true,
 	icon,
+	className,
 	...props
 }) => {
 	const sizeClass =
@@ -36,7 +37,7 @@ export const Button: React.FC<Props> = ({
 			{...props}
 			className={`${bgClass} text-${textColor} ${sizeClass} focus:outline-none font-semibold flex items-center py-2 px-4 ${
 				rounded ? 'rounded' : ''
-			}`}
+			} ${className}`}
 			css={css`
 				&:hover,
 				&:active {
