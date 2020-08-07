@@ -1,35 +1,37 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 
 const iconsContext = require.context('~/icons/', true, /svg$/);
 
-export type SvgIcon = 'close' | 'chevron-down' | 'send';
-
-export function Icon({
-	name,
-	width,
-	height,
-	size,
-	color,
-	...props
-}: {
+type Props = {
 	name: SvgIcon;
 	width?: number;
 	height?: number;
 	size?: number;
 	color?: string;
-	className?: string;
-}) {
+} & HTMLAttributes<SVGElement>;
+
+export type SvgIcon =
+	| 'close'
+	| 'chevron-down'
+	| 'send'
+	| 'mail'
+	| 'phone'
+	| 'github'
+	| 'facebook'
+	| 'linkedin';
+
+export function Icon({ name, width, height, size, color, ...props }: Props) {
 	if (size) {
 		width = height = size;
 	}
 	const icon = iconsContext(`./${name}.svg`).default;
 	return (
 		<svg
+			{...props}
 			viewBox={icon.viewBox}
 			width={width}
 			height={height}
 			color={color}
-			{...props}
 		>
 			<use xlinkHref={`#${icon.id}`} />
 		</svg>
