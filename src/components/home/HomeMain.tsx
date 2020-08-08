@@ -3,9 +3,9 @@ import { Container } from '~/components/ui/containers/Container';
 import tw from 'twin.macro';
 import { Grid } from '~/components/ui/containers/Grid';
 import { GridColumn } from '~/components/ui/containers/GridColumn';
-import { ProfileSection } from '~/components/home/ProfileSection';
 import { AboutMe } from '~/components/home/AboutMe';
 import { GeneralInfo } from '~/components/home/GeneralInfo';
+import { WorkExperience } from '~/components/home/WorkExperiences';
 
 const Root = tw.div`
 	bg-gray-300  flex-grow
@@ -19,9 +19,10 @@ export default function HomeMain() {
 						<AboutMe />
 					</GridColumn>
 					<GridColumn md={4} sm={12}>
-						<ProfileSection>
-							<GeneralInfo />
-						</ProfileSection>
+						<GeneralInfo />
+					</GridColumn>
+					<GridColumn md={8} sm={12}>
+						<WorkExperience />
 					</GridColumn>
 				</Grid>
 			</Container>
