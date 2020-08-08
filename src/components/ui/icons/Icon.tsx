@@ -21,6 +21,7 @@ export type SvgIcon =
 	| 'location'
 	| 'link'
 	| 'graduation-cap'
+	| 'external'
 	| 'linkedin';
 
 export function Icon({

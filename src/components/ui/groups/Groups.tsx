@@ -20,7 +20,7 @@ export function Groups({
 			{...props}
 			css={css`
 				display: flex;
-				align-items: ${horizontal ? 'center' : 'start'};
+				align-items: ${horizontal ? 'center' : 'stretch'};
 				flex-direction: ${horizontal ? 'row' : 'column'};
 				
 				> *:not(last-child) {
