@@ -20,8 +20,8 @@ module.exports = {
 			options: {
 				fonts: [
 					{
-						family: `Roboto Slab`,
-						variants: [`600`, `700`, `800`, `900`],
+						family: `Lato`,
+						variants: ['300', '400', `700`, `900`],
 					},
 				],
 			},

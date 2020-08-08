@@ -8,6 +8,7 @@
 		"allowSyntheticDefaultImports": true,
 		"esModuleInterop": true,
 		"noEmit": true,
+		"noImplicitAny": false,
 		"skipLibCheck": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,

@@ -7,7 +7,7 @@ import { Groups } from '~/components/ui/groups/Groups';
 import { Container } from '~/components/ui/containers/Container';
 
 const Root = styled.header`
-	${tw`bg-primary py-5 shadow-xs text-white`}
+	${tw`bg-primary py-5 text-white`}
 `;
 
 export default function Headline() {
@@ -42,7 +42,7 @@ export default function Headline() {
 								className={
 									'flex items-center pt-2 justify-center md:justify-start'
 								}
-								size={0.5}
+								size={2}
 							>
 								<Icon name={'github'} size={24} />
 								<Icon name={'linkedin'} size={24} />

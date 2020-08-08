@@ -18,9 +18,19 @@ export type SvgIcon =
 	| 'phone'
 	| 'github'
 	| 'facebook'
+	| 'location'
+	| 'link'
 	| 'linkedin';
 
-export function Icon({ name, width, height, size, color, ...props }: Props) {
+export function Icon({
+	name,
+	className,
+	width,
+	height,
+	size,
+	color,
+	...props
+}: Props) {
 	if (size) {
 		width = height = size;
 	}
@@ -31,7 +41,7 @@ export function Icon({ name, width, height, size, color, ...props }: Props) {
 			viewBox={icon.viewBox}
 			width={width}
 			height={height}
-			color={color}
+			className={`${className} text-${color}`}
 		>
 			<use xlinkHref={`#${icon.id}`} />
 		</svg>
