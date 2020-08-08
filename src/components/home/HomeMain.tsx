@@ -9,6 +9,7 @@ import { WorkExperience } from '~/components/home/WorkExperiences';
 import { Education } from '~/components/home/Education';
 import { Skills } from '~/components/home/Skills';
 import { Languages } from '~/components/home/Languages';
+import { Awards } from '~/components/home/Awards';
 
 const Root = tw.div`
 	bg-gray-300  flex-grow
@@ -35,6 +36,9 @@ export default function HomeMain() {
 					</GridColumn>
 					<GridColumn md={4} sm={12}>
 						<Languages />
+					</GridColumn>
+					<GridColumn md={8} sm={12}>
+						<Awards />
 					</GridColumn>
 				</Grid>
 			</Container>
