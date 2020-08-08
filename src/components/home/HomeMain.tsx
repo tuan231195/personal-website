@@ -6,6 +6,7 @@ import { GridColumn } from '~/components/ui/containers/GridColumn';
 import { AboutMe } from '~/components/home/AboutMe';
 import { GeneralInfo } from '~/components/home/GeneralInfo';
 import { WorkExperience } from '~/components/home/WorkExperiences';
+import { Education } from '~/components/home/Education';
 
 const Root = tw.div`
 	bg-gray-300  flex-grow
@@ -23,6 +24,9 @@ export default function HomeMain() {
 					</GridColumn>
 					<GridColumn md={8} sm={12}>
 						<WorkExperience />
+					</GridColumn>
+					<GridColumn md={4} sm={12}>
+						<Education />
 					</GridColumn>
 				</Grid>
 			</Container>

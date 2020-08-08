@@ -20,6 +20,7 @@ export type SvgIcon =
 	| 'facebook'
 	| 'location'
 	| 'link'
+	| 'graduation-cap'
 	| 'linkedin';
 
 export function Icon({
