@@ -7,7 +7,7 @@ export function WorkExperience() {
 	return (
 		<ProfileSection header={'Work Experience'}>
 			<Groups size={5} orientation={'vertical'}>
-				<div>
+				<section>
 					<div tw={'flex items-center mb-2'}>
 						<h6 tw={'font-semibold text-gray-600'}>Software Engineer - </h6>
 						<span tw={'text-gray-600'}>
@@ -22,8 +22,8 @@ export function WorkExperience() {
 						ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci
 						eget eros faucibus tincidunt.
 					</p>
-				</div>
-				<div>
+				</section>
+				<section>
 					<div tw={'flex items-center mb-2'}>
 						<h6 tw={'font-semibold text-gray-600'}>Web Developer - </h6>
 						<span tw={'text-gray-600'}>&nbsp; Itree (2011 - 2014)</span>
@@ -36,7 +36,7 @@ export function WorkExperience() {
 						ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci
 						eget eros faucibus tincidunt.
 					</p>
-				</div>
+				</section>
 			</Groups>
 		</ProfileSection>
 	);

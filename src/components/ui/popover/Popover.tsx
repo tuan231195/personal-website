@@ -1,6 +1,6 @@
 import React, { useMemo, useRef } from 'react';
 import Portal from './Portal';
-import { useBoundingClientRect } from '~/utils/hooks';
+import { useBoundingClientRect } from '~/utils/hooks/layout';
 
 export function Popover({
 	parentRef,
@@ -17,7 +17,6 @@ export function Popover({
 	}
 	const parentRect = useBoundingClientRect(parentRef);
 	const childRect = useBoundingClientRect(childRef);
-	console.log(childRect);
 	const styles = useMemo(() => {
 		const translateX = toPx(parentRect.width, childRect.width, offset.left);
 		const translateY = toPx(parentRect.height, childRect.height, offset.top);
