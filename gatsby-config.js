@@ -15,6 +15,12 @@ module.exports = {
 			},
 		},
 		{
+			resolve: `gatsby-plugin-layout`,
+			options: {
+				component: require.resolve(`./src/layout/Index.tsx`),
+			},
+		},
+		{
 			resolve: `gatsby-plugin-prefetch-google-fonts`,
 			options: {
 				fonts: [

@@ -21,13 +21,13 @@ export function Nav({ profile: { github, linkedin, facebook } }) {
 					className={'flex p-2 items-center justify-center md:justify-start'}
 					size={2}
 				>
-					<a href={github}>
+					<a href={github} target={'_blank'} rel={'noreferrer'}>
 						<Icon name={'github'} size={24} />
 					</a>
-					<a href={linkedin}>
+					<a href={linkedin} target={'_blank'} rel={'noreferrer'}>
 						<Icon name={'linkedin'} size={24} />
 					</a>
-					<a href={facebook}>
+					<a href={facebook} target={'_blank'} rel={'noreferrer'}>
 						<Icon name={'facebook'} size={24} />
 					</a>
 				</Groups>

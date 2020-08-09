@@ -34,7 +34,12 @@ export function Skills({
 					</section>
 				))}
 			</Groups>
-			<a href={linkedin} tw={'flex items-center text-gray-700'}>
+			<a
+				href={linkedin}
+				target={'_blank'}
+				rel={'noreferrer'}
+				tw={'flex items-center text-gray-700'}
+			>
 				<Icon name={'external'} size={20} />
 				<span tw={'pl-2'}>More on Linkedin</span>
 			</a>

@@ -22,7 +22,9 @@ export function GeneralInfo({
 				</Groups>
 				<Groups size={2}>
 					<Icon name={'link'} size={16} color={'gray-600'} />
-					<span> {profile.website} </span>
+					<a href={profile.website} target={'_blank'} rel={'noreferrer'}>
+						{profile.website}
+					</a>
 				</Groups>
 			</Groups>
 		</ProfileSection>
