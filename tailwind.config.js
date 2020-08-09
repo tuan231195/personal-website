@@ -155,6 +155,10 @@ module.exports = {
 		}),
 
 		extend: {
+			inset: {
+				full: '100%',
+				'1/2': '50%',
+			},
 			colors: {
 				secondary: '#d1e0f4',
 				primary: '#41A4F5',
