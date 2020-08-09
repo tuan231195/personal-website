@@ -148,4 +148,51 @@ export default {
 			year: 2015,
 		},
 	],
+	projects: [
+		{
+			name: `Tuan's news`,
+			description:
+				'A simple PWA application that collects news from multiple sources and combines them into a single website',
+			tags: ['React', 'AWS', 'NodeJS', 'ElasticSearch', 'Redis'],
+		},
+		{
+			name: 'Yup decorators',
+			description:
+				'An NPM package that adds TypeScript decorators support for the popular validation library Yup',
+			tags: ['Yup', 'TypeScript'],
+		},
+		{
+			name: 'Sportywide Web',
+			description:
+				'A Web application that fetches sport data from multiple websites and allows users to make betting on player performances',
+			tags: ['React', 'AWS', 'NestJS', 'PostgresQL', 'Redis'],
+		},
+		{
+			name: 'ACIS 2016',
+			description: (
+				<div>
+					A mobile web application that was used by the &nbsp;
+					<strong>Australasian Conferences on Information Systems</strong>{' '}
+					(ACIS) 2016.
+				</div>
+			),
+			tags: ['Java', 'PHP'],
+		},
+		{
+			name: 'Change Log Generator',
+			description: (
+				<div>
+					A Java FX application that is used to generate Liquibase XML change
+					logs and SQL DDL statements.
+				</div>
+			),
+			tags: ['Java', 'JavaFX'],
+		},
+		{
+			name: 'Money calculator',
+			description:
+				'A simple application that can used to calculate the expenses and money transfers',
+			tags: ['Angular', 'Firebase'],
+		},
+	],
 };
