@@ -22,6 +22,18 @@ module.exports = {
 		`gatsby-plugin-emotion`,
 		`gatsby-plugin-react-helmet`,
 		{
+			resolve: 'gatsby-plugin-manifest',
+			options: {
+				name: 'Schönherz Design Stúdió',
+				short_name: 'schdesign',
+				start_url: '/',
+				background_color: '#3d3d3d',
+				theme_color: '#f8485e',
+				display: 'standalone',
+				icon: 'src/images/favicon.ico',
+			},
+		},
+		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `images`,
@@ -50,13 +62,13 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `gatsby-starter-default`,
-				short_name: `starter`,
+				name: `Tuan Nguyen`,
+				short_name: `Tuan`,
 				start_url: `/`,
-				background_color: `#663399`,
-				theme_color: `#663399`,
+				background_color: `#41A4F5`,
+				theme_color: `#41A4F5`,
 				display: `minimal-ui`,
-				icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+				icon: `src/images/favicon.ico`,
 			},
 		},
 		// this (optional) plugin enables Progressive Web App + Offline functionality
