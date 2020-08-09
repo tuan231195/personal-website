@@ -15,12 +15,12 @@ const links = [
 	},
 	{
 		name: 'Projects',
-		href: '/projects',
+		href: '/projects/',
 		icon: 'bag',
 	},
 	{
 		name: 'Contact',
-		href: '/contact',
+		href: '/contact/',
 		icon: 'mail',
 	},
 ];

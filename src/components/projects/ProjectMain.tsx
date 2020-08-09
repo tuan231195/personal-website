@@ -62,14 +62,14 @@ export function ProjectMain({
 										</span>
 									</div>
 									<p tw={'flex-grow'}>{project.description}</p>
-									<div tw={'flex flex-wrap items-center mt-3'}>
+									<span tw={'flex flex-wrap items-center mt-3'}>
 										{project.tags.map((tag) => (
 											<Badge key={tag} color={getRandomizedColor(tag)}>
 												{' '}
 												{tag}{' '}
 											</Badge>
 										))}
-									</div>
+									</span>
 								</Card>
 							</GridColumn>
 						);

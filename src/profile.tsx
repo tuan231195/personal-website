@@ -10,7 +10,7 @@ export default {
 		email: 'vdtn359@gmail.com',
 		phone: '0450082978',
 		location: 'Hurstville, NSW',
-		website: 'https://vdtn359.com',
+		website: 'https://vdtn359.com.au',
 		github: 'https://github.com/tuan231195',
 		linkedin: 'https://www.linkedin.com/in/van-do-tuan-nguyen/',
 		facebook: 'https://www.facebook.com/vo.hoc.2311',
