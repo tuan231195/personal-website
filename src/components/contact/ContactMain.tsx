@@ -9,6 +9,7 @@ import { Card } from '~/components/ui/containers/Card';
 import { TextAreaField } from '~/components/input/TextAreaField';
 import { contactSchema } from '~/schemas/contact';
 import { clientApi } from '~/http/api';
+import { toast } from 'react-toastify';
 
 const Root = tw.div`
 	bg-gray-300  flex-grow py-10
@@ -34,6 +35,9 @@ export function ContactMain() {
 							try {
 								setSubmitting(true);
 								await clientApi.post('/contact', values);
+								toast('Your enquiry has been submitted', {
+									type: 'success',
+								});
 							} finally {
 								setSubmitting(false);
 							}
