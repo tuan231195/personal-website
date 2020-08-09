@@ -5,7 +5,7 @@ export default {
 		name: 'Tuan Nguyen',
 		githubUsername: 'tuan231195',
 		avatar:
-			'https://media-exp1.licdn.com/dms/image/C5103AQGbaWNuZzFiXg/profile-displayphoto-shrink_400_400/0?e=1602115200&v=beta&t=aN91iPo88eeXRzYz5C-v-J2zzoLoS2UmmXCCKc5qqw8',
+			'https://ik.imagekit.io/emtg9z3bqr/tr:h-160,w-160/avatar_cubwNe2pI.jpeg',
 		role: 'Software Developer',
 		email: 'vdtn359@gmail.com',
 		phone: '0450082978',

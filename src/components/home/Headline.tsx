@@ -3,7 +3,6 @@ import tw, { styled } from 'twin.macro';
 import { Button } from '~/components/ui/controls/Button';
 import { Avatar } from '~/components/ui/images/Avatar';
 import { Icon } from '~/components/ui/icons/Icon';
-import { Groups } from '~/components/ui/groups/Groups';
 import { Container } from '~/components/ui/containers/Container';
 
 const Root = styled.header`
@@ -11,21 +10,12 @@ const Root = styled.header`
 `;
 
 export default function Headline({ profile }) {
-	const {
-		name,
-		email,
-		avatar,
-		role,
-		phone,
-		github,
-		linkedin,
-		facebook,
-	} = profile;
+	const { name, email, avatar, role, phone } = profile;
 	return (
 		<Root>
 			<Container className={'md:justify-between'}>
 				<div tw={'flex items-center flex-col md:flex-row justify-center'}>
-					<Avatar rounded={false} src={avatar} size={48} />
+					<Avatar circular={false} src={avatar} size={40} />
 					<div
 						tw={
 							'md:ml-6 pt-2 md:pt-0 flex flex-col md:items-start items-center'
@@ -42,22 +32,6 @@ export default function Headline({ profile }) {
 								<Icon name={'phone'} size={24} color={'white'} />
 								<span tw={'pl-1'}>{phone}</span>
 							</div>
-							<Groups
-								className={
-									'flex items-center pt-2 justify-center md:justify-start'
-								}
-								size={2}
-							>
-								<a href={github}>
-									<Icon name={'github'} size={24} />
-								</a>
-								<a href={linkedin}>
-									<Icon name={'linkedin'} size={24} />
-								</a>
-								<a href={facebook}>
-									<Icon name={'facebook'} size={24} color={'white'} />
-								</a>
-							</Groups>
 						</div>
 					</div>
 				</div>

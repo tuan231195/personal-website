@@ -158,6 +158,7 @@ module.exports = {
 			colors: {
 				secondary: '#d1e0f4',
 				primary: '#41A4F5',
+				accent: '#FF8106',
 				cta: '#d10220',
 				info: '#2ecbf6',
 				warning: '#e4ca52',
