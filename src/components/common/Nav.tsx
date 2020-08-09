@@ -87,12 +87,16 @@ const HamburgerButton = styled.button<{ open: boolean }>`
 	}
 `;
 
-export function Nav({ profile: { github, linkedin, facebook } }) {
+export function Nav({ profile: { github, linkedin, facebook }, location }) {
 	const [open, setOpen] = useState(false);
 	const [stickyGetter, setSticky] = useStateRef(false);
 
 	useEffect(() => {
 		const content = document.getElementById('content');
+		if (!content) {
+			setSticky(false);
+			return;
+		}
 		const { top: bodyTop } = offsetToDocument(content);
 		function listener() {
 			if (window.scrollY >= bodyTop) {
@@ -109,7 +113,7 @@ export function Nav({ profile: { github, linkedin, facebook } }) {
 		return () => {
 			window.removeEventListener('scroll', listener);
 		};
-	}, []);
+	}, [location.pathname]);
 	return (
 		<Root sticky={stickyGetter()}>
 			<div tw={'flex items-center justify-between'}>
@@ -153,7 +157,7 @@ export function Nav({ profile: { github, linkedin, facebook } }) {
 							activeClassName='bg-accent'
 							className={'py-2 px-2'}
 						>
-							<Icon name={link.icon as any} className={'mr-2'} size={20} />{' '}
+							<Icon name={link.icon as any} className={'mr-2'} size={20} />
 							{link.name}
 						</NavLink>
 					);

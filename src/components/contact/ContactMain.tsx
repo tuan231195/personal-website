@@ -20,14 +20,14 @@ const contactSchema = Yup.object({
 });
 
 const Root = tw.div`
-	bg-gray-300  flex-grow py-6
+	bg-gray-300  flex-grow py-10
 `;
 
 export function ContactMain() {
 	return (
-		<Root id={'content'}>
+		<Root>
 			<Container className={'flex'}>
-				<h4 tw={'type-h4 text-center p-5'}>Contact Me</h4>
+				<h4 tw={'type-h4 text-center mb-4'}>Contact Me</h4>
 				<Card tw={'sm:w-2/3 w-full max-w-2xl m-auto'}>
 					<Formik
 						initialValues={{

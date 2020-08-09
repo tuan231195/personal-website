@@ -11,7 +11,7 @@ import { Groups } from '~/components/ui/groups/Groups';
 import { Icon } from '~/components/ui/icons/Icon';
 
 const Root = tw.div`
-	bg-gray-300  flex-grow
+	bg-gray-300 py-10  flex-grow
 `;
 
 export function ProjectMain({
@@ -20,9 +20,9 @@ export function ProjectMain({
 	projects: typeof userProfile['projects'];
 }) {
 	return (
-		<Root id={'content'}>
+		<Root>
 			<Container>
-				<h4 tw={'type-h4 text-center p-5'}>Projects</h4>
+				<h4 tw={'type-h4 text-center mb-4'}>Projects</h4>
 				<Grid gap={5} className={'mb-5'}>
 					{projects.map((project, index) => {
 						return (
