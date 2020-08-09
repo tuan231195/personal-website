@@ -18,12 +18,13 @@ export type SvgIcon =
 	| 'phone'
 	| 'github'
 	| 'facebook'
+	| 'linkedin'
 	| 'location'
 	| 'link'
 	| 'graduation-cap'
 	| 'external'
 	| 'home'
-	| 'linkedin';
+	| 'check';
 
 export function Icon({
 	name,
