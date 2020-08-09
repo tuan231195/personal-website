@@ -9,4 +9,5 @@ clientApi.interceptors.response.use(undefined, (error) => {
 	toast(error.response.data.error, {
 		type: 'error',
 	});
+	throw error;
 });
