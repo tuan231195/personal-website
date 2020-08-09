@@ -11,6 +11,7 @@ import { Skills } from '~/components/home/Skills';
 import { Languages } from '~/components/home/Languages';
 import { Awards } from '~/components/home/Awards';
 import userProfile from '~/profile';
+import { GithubContribution } from '~/components/home/GithubContribution';
 
 const Root = tw.div`
 	bg-gray-300  flex-grow
@@ -30,16 +31,19 @@ export default function HomeMain({ profile }: { profile: typeof userProfile }) {
 						<WorkExperience experiences={profile.work} />
 					</GridColumn>
 					<GridColumn md={4} sm={12}>
-						<Education educationList={profile.education} />
-					</GridColumn>
-					<GridColumn md={8} sm={12}>
 						<Skills skills={profile.skills} linkedin={profile.basic.linkedin} />
-					</GridColumn>
-					<GridColumn md={4} sm={12}>
-						<Languages languages={profile.languages} />
 					</GridColumn>
 					<GridColumn md={8} sm={12}>
 						<Awards awards={profile.awards} />
+					</GridColumn>
+					<GridColumn md={4} sm={12}>
+						<Education educationList={profile.education} />
+					</GridColumn>
+					<GridColumn md={8} sm={12}>
+						<GithubContribution githubUsername={profile.basic.githubUsername} />
+					</GridColumn>
+					<GridColumn md={4} sm={12}>
+						<Languages languages={profile.languages} />
 					</GridColumn>
 				</Grid>
 			</Container>

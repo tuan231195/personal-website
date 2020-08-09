@@ -3,6 +3,7 @@ import React from 'react';
 export default {
 	basic: {
 		name: 'Tuan Nguyen',
+		githubUsername: 'tuan231195',
 		avatar:
 			'https://media-exp1.licdn.com/dms/image/C5103AQGbaWNuZzFiXg/profile-displayphoto-shrink_400_400/0?e=1602115200&v=beta&t=aN91iPo88eeXRzYz5C-v-J2zzoLoS2UmmXCCKc5qqw8',
 		role: 'Software Developer',
