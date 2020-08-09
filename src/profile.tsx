@@ -154,18 +154,22 @@ export default {
 			description:
 				'A simple PWA application that collects news from multiple sources and combines them into a single website',
 			tags: ['React', 'AWS', 'NodeJS', 'ElasticSearch', 'Redis'],
+			source: 'https://github.com/tuan231195/vdtn359-news',
+			link: 'https://vdtn359.com',
 		},
 		{
 			name: 'Yup decorators',
 			description:
 				'An NPM package that adds TypeScript decorators support for the popular validation library Yup',
 			tags: ['Yup', 'TypeScript'],
+			source: 'https://github.com/tuan231195/yup-decorator',
 		},
 		{
 			name: 'Sportywide Web',
 			description:
 				'A Web application that fetches sport data from multiple websites and allows users to make betting on player performances',
 			tags: ['React', 'AWS', 'NestJS', 'PostgresQL', 'Redis'],
+			source: 'https://github.com/sportywide/Sporty-Wide-Web',
 		},
 		{
 			name: 'ACIS 2016',
@@ -177,6 +181,7 @@ export default {
 				</div>
 			),
 			tags: ['Java', 'PHP'],
+			link: 'https://apkpure.com/ar/acis-2016/au.com.leremede.acis2016',
 		},
 		{
 			name: 'Change Log Generator',
@@ -186,6 +191,7 @@ export default {
 					logs and SQL DDL statements.
 				</div>
 			),
+			source: 'https://github.com/tuan231195/change-log-generator-gui',
 			tags: ['Java', 'JavaFX'],
 		},
 		{
@@ -193,6 +199,8 @@ export default {
 			description:
 				'A simple application that can used to calculate the expenses and money transfers',
 			tags: ['Angular', 'Firebase'],
+			source: 'https://github.com/tuan231195/money-calculator',
+			link: 'https://overconfident-mailbox.surge.sh',
 		},
 	],
 };

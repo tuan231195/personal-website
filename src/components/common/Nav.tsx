@@ -136,7 +136,7 @@ export function Nav({ profile: { github, linkedin, facebook } }) {
 					activeClassName='bg-accent'
 					className={'py-2 px-2'}
 				>
-					<Icon name={'home'} className={'mr-2'} size={20} /> Projects
+					<Icon name={'bag'} className={'mr-2'} size={20} /> Projects
 				</NavLink>
 			</div>
 		</Root>

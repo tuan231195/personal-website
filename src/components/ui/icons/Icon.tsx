@@ -24,6 +24,8 @@ export type SvgIcon =
 	| 'graduation-cap'
 	| 'external'
 	| 'home'
+	| 'web'
+	| 'bag'
 	| 'check';
 
 export function Icon({
