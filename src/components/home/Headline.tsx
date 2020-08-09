@@ -4,6 +4,7 @@ import { Button } from '~/components/ui/controls/Button';
 import { Avatar } from '~/components/ui/images/Avatar';
 import { Icon } from '~/components/ui/icons/Icon';
 import { Container } from '~/components/ui/containers/Container';
+import { Link } from 'gatsby';
 
 const Root = styled.header`
 	${tw`bg-primary py-5 text-white`}
@@ -40,9 +41,12 @@ export default function Headline({ profile }) {
 							</div>
 						</div>
 					</div>
-					<Button icon={'send'} size={'sm'} className={'md:mt-0 mt-4'}>
-						CONTACT ME
-					</Button>
+
+					<Link to={'/contact'}>
+						<Button icon={'send'} size={'sm'} className={'md:mt-0 mt-4'}>
+							CONTACT ME
+						</Button>
+					</Link>
 				</div>
 			</Container>
 		</Root>

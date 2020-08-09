@@ -45,10 +45,13 @@ export const Button: React.FC<Props> = ({
 			disabled={disabled}
 			type={type}
 			css={css`
-				&:hover,
-				&:active {
-					transform: translateY(1px);
-				}
+				${!disabled &&
+				`
+					&:hover,
+					&:active {
+						transform: translateY(1px);
+					}
+				`}
 
 				${disabled &&
 				`
