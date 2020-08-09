@@ -31,6 +31,7 @@ module.exports = {
 		'@typescript-eslint/no-explicit-any': 'off',
 		'no-inner-declarations': 'off',
 		'@typescript-eslint/explicit-module-boundary-types': 'off',
+		'@typescript-eslint/ban-types': 'off',
 	},
 	overrides: [
 		// Override some TypeScript rules just for .js files

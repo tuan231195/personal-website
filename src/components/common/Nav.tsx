@@ -7,6 +7,23 @@ import cn from 'classnames';
 import { useStateRef } from '~/utils/hooks/basic';
 import { offsetToDocument } from '~/utils/dom/offset';
 
+const links = [
+	{
+		name: 'Home',
+		href: '/',
+		icon: 'home',
+	},
+	{
+		name: 'Projects',
+		href: '/projects',
+		icon: 'bag',
+	},
+	{
+		name: 'Contact',
+		href: '/contact',
+		icon: 'mail',
+	},
+];
 const Root = styled.nav<{ sticky: boolean }>`
 	${tw`bg-blue-600 flex flex-col sm:flex-row sm:items-center justify-between text-white relative`}
 	min-height: 2rem;
@@ -128,16 +145,19 @@ export function Nav({ profile: { github, linkedin, facebook } }) {
 					hidden: !open,
 				})}
 			>
-				<NavLink to='/' activeClassName='bg-accent' className={'py-2 px-2'}>
-					<Icon name={'home'} className={'mr-2'} size={20} /> Home
-				</NavLink>
-				<NavLink
-					to='/projects'
-					activeClassName='bg-accent'
-					className={'py-2 px-2'}
-				>
-					<Icon name={'bag'} className={'mr-2'} size={20} /> Projects
-				</NavLink>
+				{links.map((link, index) => {
+					return (
+						<NavLink
+							to={link.href}
+							key={index}
+							activeClassName='bg-accent'
+							className={'py-2 px-2'}
+						>
+							<Icon name={link.icon as any} className={'mr-2'} size={20} />{' '}
+							{link.name}
+						</NavLink>
+					);
+				})}
 			</div>
 		</Root>
 	);
