@@ -10,35 +10,36 @@ import { Education } from '~/components/home/Education';
 import { Skills } from '~/components/home/Skills';
 import { Languages } from '~/components/home/Languages';
 import { Awards } from '~/components/home/Awards';
+import userProfile from '~/profile';
 
 const Root = tw.div`
 	bg-gray-300  flex-grow
 `;
-export default function HomeMain() {
+export default function HomeMain({ profile }: { profile: typeof userProfile }) {
 	return (
 		<Root>
 			<Container>
 				<Grid gap={5} className={`pt-4`}>
 					<GridColumn md={8} sm={12}>
-						<AboutMe />
+						<AboutMe about={profile.about} />
 					</GridColumn>
 					<GridColumn md={4} sm={12}>
-						<GeneralInfo />
+						<GeneralInfo profile={profile.basic} />
 					</GridColumn>
 					<GridColumn md={8} sm={12}>
-						<WorkExperience />
+						<WorkExperience experiences={profile.work} />
 					</GridColumn>
 					<GridColumn md={4} sm={12}>
-						<Education />
+						<Education educationList={profile.education} />
 					</GridColumn>
 					<GridColumn md={8} sm={12}>
-						<Skills />
+						<Skills skills={profile.skills} linkedin={profile.basic.linkedin} />
 					</GridColumn>
 					<GridColumn md={4} sm={12}>
-						<Languages />
+						<Languages languages={profile.languages} />
 					</GridColumn>
 					<GridColumn md={8} sm={12}>
-						<Awards />
+						<Awards awards={profile.awards} />
 					</GridColumn>
 				</Grid>
 			</Container>
