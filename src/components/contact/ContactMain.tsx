@@ -1,6 +1,5 @@
 import { Formik } from 'formik';
 import React from 'react';
-import * as Yup from 'yup';
 import { FormField } from '~/components/input/FormField';
 import { TextField } from '~/components/input/TextField';
 import { Button } from '~/components/ui/controls/Button';
@@ -8,16 +7,8 @@ import tw from 'twin.macro';
 import { Container } from '../ui/containers/Container';
 import { Card } from '~/components/ui/containers/Card';
 import { TextAreaField } from '~/components/input/TextAreaField';
-
-const contactSchema = Yup.object({
-	name: Yup.string().required('Name is required').trim(),
-	email: Yup.string()
-		.trim()
-		.email('Email is not valid')
-		.required('Email is required'),
-	subject: Yup.string().required('Subject is required').trim(),
-	enquiry: Yup.string().required('Enquiry is required').trim(),
-});
+import { contactSchema } from '~/schemas/contact';
+import { clientApi } from '~/http/api';
 
 const Root = tw.div`
 	bg-gray-300  flex-grow py-10
@@ -40,9 +31,9 @@ export function ContactMain() {
 						isInitialValid={false}
 						validationSchema={contactSchema}
 						onSubmit={async (values, { setSubmitting }) => {
-							console.log(values);
 							try {
 								setSubmitting(true);
+								await clientApi.post('/contact', values);
 							} finally {
 								setSubmitting(false);
 							}

@@ -1,7 +1,20 @@
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
 module.exports = {
 	siteMetadata: {
 		title: `Tuan Nguyen's personal website`,
 		author: `Tuan Nguyen`,
+	},
+	developMiddleware: (app) => {
+		app.use(
+			'/api',
+			createProxyMiddleware({
+				target: 'http://localhost:9000',
+				pathRewrite: {
+					'/api': '',
+				},
+			})
+		);
 	},
 	plugins: [
 		`gatsby-plugin-postcss`,
