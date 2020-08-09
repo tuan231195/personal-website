@@ -1,13 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import tw, { styled, theme } from 'twin.macro';
 import { Icon } from '~/components/ui/icons/Icon';
 import { Link } from 'gatsby';
 import { Groups } from '~/components/ui/groups/Groups';
 import cn from 'classnames';
+import { useStateRef } from '~/utils/hooks/basic';
+import { offsetToDocument } from '~/utils/dom/offset';
 
-const Root = styled.nav`
+const Root = styled.nav<{ sticky: boolean }>`
 	${tw`bg-blue-600 flex flex-col sm:flex-row sm:items-center justify-between text-white relative`}
 	min-height: 2rem;
+	${({ sticky }) =>
+		sticky &&
+		`
+		    position: fixed!important;
+			min-width: 100%;
+			top: 0;
+			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+			transition: all .25s ease-in;
+			z-index: 1;
+	`}
 `;
 
 const NavLink = styled(Link)`
@@ -38,7 +50,7 @@ const HamburgerButton = styled.button<{ open: boolean }>`
 			open &&
 			`
 			 transform: rotate(45deg)
-   		 translateY(0px);
+   		 	translateY(0px);
 		`}
 	}
 
@@ -49,7 +61,7 @@ const HamburgerButton = styled.button<{ open: boolean }>`
 			open &&
 			`
 			 transform: rotate(-45deg)
-   		 translateY(0px);
+   			 translateY(0px);
 		`}
 	}
 
@@ -60,8 +72,29 @@ const HamburgerButton = styled.button<{ open: boolean }>`
 
 export function Nav({ profile: { github, linkedin, facebook } }) {
 	const [open, setOpen] = useState(false);
+	const [stickyGetter, setSticky] = useStateRef(false);
+
+	useEffect(() => {
+		const content = document.getElementById('content');
+		const { top: bodyTop } = offsetToDocument(content);
+		function listener() {
+			if (window.scrollY >= bodyTop) {
+				if (!stickyGetter()) {
+					setSticky(true);
+				}
+			} else {
+				if (stickyGetter()) {
+					setSticky(false);
+				}
+			}
+		}
+		window.addEventListener('scroll', listener);
+		return () => {
+			window.removeEventListener('scroll', listener);
+		};
+	}, []);
 	return (
-		<Root>
+		<Root sticky={stickyGetter()}>
 			<div tw={'flex items-center justify-between'}>
 				<Groups
 					className={'flex p-2 items-center justify-center md:justify-start'}
@@ -89,14 +122,21 @@ export function Nav({ profile: { github, linkedin, facebook } }) {
 
 			<div
 				tw={
-					'self-stretch sm:flex flex-col sm:flex-row sm:items-center sm:w-auto absolute sm:static top-full w-full'
+					'self-stretch sm:flex bg-blue-600 flex-col sm:flex-row sm:items-center sm:w-auto absolute sm:static top-full w-full'
 				}
 				className={cn({
 					hidden: !open,
 				})}
 			>
-				<NavLink to='/' activeClassName='bg-accent' className={'sm:p-0 p-2 '}>
+				<NavLink to='/' activeClassName='bg-accent' className={'py-2 px-2'}>
 					<Icon name={'home'} className={'mr-2'} size={20} /> Home
+				</NavLink>
+				<NavLink
+					to='/projects'
+					activeClassName='bg-accent'
+					className={'py-2 px-2'}
+				>
+					<Icon name={'home'} className={'mr-2'} size={20} /> Projects
 				</NavLink>
 			</div>
 		</Root>

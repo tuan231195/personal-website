@@ -18,7 +18,7 @@ const Root = tw.div`
 `;
 export default function HomeMain({ profile }: { profile: typeof userProfile }) {
 	return (
-		<Root>
+		<Root id={'content'}>
 			<Container>
 				<Grid gap={5} className={`pt-4`}>
 					<GridColumn md={8} sm={12}>
