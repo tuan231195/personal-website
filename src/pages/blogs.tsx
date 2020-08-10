@@ -15,6 +15,9 @@ export default function Blogs() {
 							title
 							date
 						}
+						fields {
+							slug
+						}
 					}
 				}
 			}

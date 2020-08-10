@@ -1,6 +1,5 @@
 ---
-templateKey: "{{slug}}"
-slug: blog-post
+templateKey: blog-post
 title: My First Blog Post
 date: 2020-08-10T04:06:29.327Z
 image: /img/beautiful-calla-lily-nice-background-color-70725804.jpg
