@@ -9,6 +9,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { wrapRootElement } from '~/components/markdown/mdx';
 import { ColorBadge } from '~/components/ui/misc/ColorBadge';
 import { Groups } from '~/components/ui/groups/Groups';
+import { Helmet } from 'react-helmet';
 
 const Root = tw.div`
 	bg-gray-300  flex-grow py-10
@@ -35,6 +36,7 @@ const BlogTemplate = ({
 }) =>
 	wrapRootElement(
 		<Root>
+			<Helmet defer={false} title={frontmatter.title} />
 			<Container>
 				<Card>
 					{frontmatter.image && (

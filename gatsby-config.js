@@ -4,6 +4,7 @@ module.exports = {
 	siteMetadata: {
 		title: `Tuan Nguyen's personal website`,
 		author: `Tuan Nguyen`,
+		description: 'A simple website created using Gatsby',
 	},
 	developMiddleware: (app) => {
 		app.use(
@@ -23,7 +24,7 @@ module.exports = {
 			options: {
 				extensions: ['.mdx', '.md'],
 				defaultLayouts: {
-					default: require.resolve('./src/templates/BlogTemplate.tsx'),
+					default: require.resolve('./src/templates/PageTemplate.tsx'),
 				},
 			},
 		},
