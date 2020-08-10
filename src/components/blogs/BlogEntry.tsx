@@ -29,7 +29,7 @@ export function BlogEntry({ blog }: { blog: Blog }) {
 				</div>
 				<p className={'truncate-3-lines'}>{blog.excerpt}</p>
 			</article>
-			<Link to={`/blogs/${blog.fields.slug}`} className={'self-end mt-4'}>
+			<Link to={`/blogs/${blog.slug}`} className={'self-end mt-4'}>
 				<Button>
 					<span tw={'flex items-center'}>
 						Read More

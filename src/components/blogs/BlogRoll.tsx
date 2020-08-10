@@ -9,7 +9,6 @@ const Root = tw.div`
 `;
 
 export function BlogRoll({ blogs }: { blogs: Blog[] }) {
-	console.log(blogs);
 	return (
 		<Root>
 			<Container className={'items-center'}>

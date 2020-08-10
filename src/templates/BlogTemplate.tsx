@@ -5,6 +5,7 @@ import { Card } from '~/components/ui/containers/Card';
 import tw from 'twin.macro';
 import { Icon } from '~/components/ui/icons/Icon';
 import { format } from 'date-fns';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { wrapRootElement } from '~/components/markdown/mdx';
 
 const Root = tw.div`
@@ -13,22 +14,21 @@ const Root = tw.div`
 
 export const query = graphql`
 	query($slug: String!) {
-		markdownRemark(fields: { slug: { eq: $slug } }) {
-			html
+		mdx(slug: { eq: $slug }) {
+			body
 			frontmatter {
 				tags
 				date
 				image
 				title
-				tags
 			}
 		}
 	}
 `;
 
-const PostTemplate = ({
+const BlogTemplate = ({
 	data: {
-		markdownRemark: { html, frontmatter },
+		mdx: { body, frontmatter },
 	},
 }) =>
 	wrapRootElement(
@@ -58,13 +58,10 @@ const PostTemplate = ({
 							{format(new Date(frontmatter.date), 'MMM dd, yyyy')}
 						</time>
 					</header>
-					<div
-						className='blog-post-content'
-						dangerouslySetInnerHTML={{ __html: html }}
-					/>
+					<MDXRenderer>{body}</MDXRenderer>
 				</Card>
 			</Container>
 		</Root>
 	);
 
-export default PostTemplate;
+export default BlogTemplate;

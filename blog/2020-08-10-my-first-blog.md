@@ -3,6 +3,9 @@ templateKey: blog-post
 title: My First Blog
 date: 2020-08-10T02:11:01.556Z
 image: /img/beautiful-calla-lily-nice-background-color-70725804.jpg
+tags:
+  - JavaScript
+  - React
 ---
 **This is my bold text**
 

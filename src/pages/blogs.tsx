@@ -6,20 +6,16 @@ import React from 'react';
 export default function Blogs() {
 	const data = useStaticQuery(graphql`
 		query BlogsQuery {
-			allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-				edges {
-					node {
-						excerpt(pruneLength: 400)
-						id
-						frontmatter {
-							image
-							title
-							date
-						}
-						fields {
-							slug
-						}
+			allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
+				nodes {
+					excerpt(pruneLength: 400)
+					id
+					frontmatter {
+						image
+						title
+						date
 					}
+					slug
 				}
 			}
 		}
@@ -28,7 +24,7 @@ export default function Blogs() {
 	return (
 		<>
 			<Helmet title='Blog posts' defer={false} />
-			<BlogRoll blogs={data.allMarkdownRemark.edges.map(({ node }) => node)} />
+			<BlogRoll blogs={data.allMdx.nodes} />
 		</>
 	);
 }

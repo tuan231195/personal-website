@@ -1,8 +1,6 @@
 export interface Blog {
 	excerpt: string;
-	fields: {
-		slug: string;
-	};
+	slug: string;
 	frontmatter: {
 		tags: string[];
 		date: string;
