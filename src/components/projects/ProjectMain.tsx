@@ -15,7 +15,7 @@ export function ProjectMain({
 	projects: typeof userProfile['projects'];
 }) {
 	return (
-		<Container>
+		<Container className={'py-6'}>
 			<h4 tw={'type-h4 text-center mb-4'}>Projects</h4>
 			<Grid gap={5} className={'mb-5'}>
 				{projects.map((project, index) => {

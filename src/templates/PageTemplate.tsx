@@ -14,7 +14,7 @@ const PageTemplate = ({ children }) => {
 	return wrapRootElement(
 		<GreyBackground>
 			<Helmet defer={false} title={title} />
-			<Container>
+			<Container tw={'sm:py-6'}>
 				<Card>{children}</Card>
 			</Container>
 		</GreyBackground>

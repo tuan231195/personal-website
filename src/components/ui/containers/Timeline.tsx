@@ -3,7 +3,7 @@ import { Icon } from '~/components/ui/icons/Icon';
 
 export function Timeline({ children }) {
 	return (
-		<div className='relative m-8'>
+		<div className='relative lg:m-6 m-2'>
 			<div className='border-r-2 border-green-500 absolute h-full top-0 -mx-px' />
 			<ul className='list-none m-0 p-0'>
 				{React.Children.map(children, ({ props: { className, ...props } }) => {

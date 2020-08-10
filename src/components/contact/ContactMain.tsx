@@ -13,7 +13,7 @@ import { toast } from 'react-toastify';
 
 export function ContactMain() {
 	return (
-		<Container className={'flex'}>
+		<Container className={'flex py-6 px-5'}>
 			<h4 tw={'type-h4 text-center mb-4'}>Contact Me</h4>
 			<Card tw={'sm:w-2/3 w-full max-w-2xl m-auto'}>
 				<Formik

@@ -10,7 +10,7 @@ export function GeneralInfo({
 	profile: typeof userProfile['basic'];
 }) {
 	return (
-		<ProfileSection>
+		<ProfileSection header={'Basic Information'}>
 			<Groups size={2} orientation={'vertical'}>
 				<Groups size={2}>
 					<Icon name={'location'} size={16} color={'gray-600'} />

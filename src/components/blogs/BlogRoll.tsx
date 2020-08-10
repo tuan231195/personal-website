@@ -6,7 +6,7 @@ import { BlogEntry } from '~/components/blogs/BlogEntry';
 
 export function BlogRoll({ blogs }: { blogs: Blog[] }) {
 	return (
-		<Container className={'items-center'}>
+		<Container className={'items-center px-5 py-6'}>
 			<h4 tw={'type-h4 text-center mb-4'}>Blogs</h4>
 			{blogs.map((blog) => (
 				<BlogEntry blog={blog} key={blog.id} />

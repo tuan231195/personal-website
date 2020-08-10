@@ -36,8 +36,8 @@ const BlogTemplate = ({
 	wrapRootElement(
 		<GreyBackground>
 			<Helmet defer={false} title={frontmatter.title} />
-			<Container>
-				<Card>
+			<Container tw={'sm:py-6'}>
+				<Card className={'sm:max-w-6xl w-full'}>
 					{frontmatter.image && (
 						<Card.Image
 							style={{ maxHeight: '500px' }}
