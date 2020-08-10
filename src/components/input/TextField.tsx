@@ -46,7 +46,7 @@ export function TextField({
 				tw='shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none'
 			/>
 			{!!error && (
-				<span tw={'text-red-600 text-sm  font-bold mt-2'}>{error}</span>
+				<span tw={'text-red-600 text-sm font-bold mt-2'}>{error}</span>
 			)}
 		</div>
 	);

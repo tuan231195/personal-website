@@ -1,0 +1,26 @@
+backend:
+  name: github
+  repo: tuan231195/personal-website
+  branch: master
+
+media_folder: static/img
+public_folder: /img
+commit_messages:
+  create: 'Create {{collection}} "{{slug}}"'
+  update: 'Update {{collection}} "{{slug}}"'
+  delete: 'Delete {{collection}} "{{slug}}"'
+  uploadMedia: '[skip ci] Upload "{{path}}"'
+  deleteMedia: '[skip ci] Delete "{{path}}"'
+
+collections:
+  - name: blog
+    label: Blog
+    folder: blog
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - { name: title, label: Title }
+      - { name: date, label: Date, widget: datetime }
+      - { label: "Featured Image", name: "image", widget: image}
+      - { name: body, label: Body, widget: markdown }
