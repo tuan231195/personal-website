@@ -20,7 +20,7 @@ export function Skills({
 					<section key={index}>
 						<div tw={'flex items-center justify-between'}>
 							<div>{skill.name}</div>
-							<div tw={'italic text-gray-500'}>
+							<div tw={'italic text-gray-700'}>
 								{skill.value >= 9
 									? 'Excellent'
 									: skill.value >= 8

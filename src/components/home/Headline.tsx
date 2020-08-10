@@ -28,7 +28,7 @@ export default function Headline({ profile }) {
 							}
 						>
 							<h4 className={'type-h4'}>{name}</h4>
-							<h6 className={'text-2xl'}>{role}</h6>
+							<h5 className={'text-2xl'}>{role}</h5>
 							<div>
 								<div tw={'flex items-center pt-2'}>
 									<Icon name={'mail'} size={24} color={'white'} />

@@ -19,8 +19,8 @@ export function WorkExperience({
 								'flex md:flex-row flex-col md:justify-between md:items-center mb-2'
 							}
 						>
-							<h6 tw={'font-semibold text-gray-600'}>{experience.role}</h6>
-							<span tw={'text-gray-600'}>
+							<h6 tw={'font-semibold text-gray-700'}>{experience.role}</h6>
+							<span tw={'text-gray-700'}>
 								{experience.company} ({experience.period})
 							</span>
 						</div>

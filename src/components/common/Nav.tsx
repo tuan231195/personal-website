@@ -121,18 +121,34 @@ export function Nav({ profile: { github, linkedin, facebook }, location }) {
 					className={'flex p-2 items-center justify-center md:justify-start'}
 					size={2}
 				>
-					<a href={github} target={'_blank'} rel={'noreferrer'}>
+					<a
+						href={github}
+						target={'_blank'}
+						aria-label='github'
+						rel={'noreferrer'}
+					>
 						<Icon name={'github'} size={24} />
 					</a>
-					<a href={linkedin} target={'_blank'} rel={'noreferrer'}>
+					<a
+						href={linkedin}
+						target={'_blank'}
+						aria-label='linkedin'
+						rel={'noreferrer'}
+					>
 						<Icon name={'linkedin'} size={24} />
 					</a>
-					<a href={facebook} target={'_blank'} rel={'noreferrer'}>
+					<a
+						href={facebook}
+						target={'_blank'}
+						aria-label='facebook'
+						rel={'noreferrer'}
+					>
 						<Icon name={'facebook'} size={24} />
 					</a>
 				</Groups>
 				<HamburgerButton
 					open={open}
+					aria-label={'menu'}
 					type='button'
 					onClick={() => setOpen(!open)}
 				>

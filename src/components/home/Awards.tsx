@@ -11,8 +11,8 @@ export function Awards({ awards }: { awards: typeof userProfile['awards'] }) {
 				{awards.map((award, index) => (
 					<section key={index}>
 						<div tw={'flex items-center mb-2'}>
-							<h6 tw={'font-semibold text-gray-600'}>{award.name} - </h6>
-							<span tw={'text-gray-600'}>&nbsp; {award.year}</span>
+							<h6 tw={'font-semibold text-gray-700'}>{award.name} - </h6>
+							<span tw={'text-gray-700'}>&nbsp; {award.year}</span>
 						</div>
 
 						<p>{award.desc}</p>
