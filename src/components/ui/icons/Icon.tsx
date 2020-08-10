@@ -28,6 +28,7 @@ export type SvgIcon =
 	| 'web'
 	| 'bag'
 	| 'calendar'
+	| 'arrow-narrow-left'
 	| 'arrow-narrow-right'
 	| 'check';
 
