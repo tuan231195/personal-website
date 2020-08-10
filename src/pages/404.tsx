@@ -1,6 +1,9 @@
-import tw from 'twin.macro';
+import 'twin.macro';
 import { Helmet } from 'react-helmet';
-import { Container } from '~/components/ui/containers/Container';
+import {
+	Container,
+	GreyBackground,
+} from '~/components/ui/containers/Container';
 import { Icon } from '~/components/ui/icons/Icon';
 import React from 'react';
 import { ErrorHeader, ErrorStatusText } from '~/components/ui/errors/ErrorPage';
@@ -8,13 +11,9 @@ import { Card } from '~/components/ui/containers/Card';
 import { Link } from 'gatsby';
 import { Button } from '~/components/ui/controls/Button';
 
-const Root = tw.div`
-	bg-gray-300  flex-grow py-10
-`;
-
 export default function NotFoundPage() {
 	return (
-		<Root>
+		<GreyBackground className={'flex items-center justify-center'}>
 			<Helmet defer={false} title={'Not Found'} />
 			<Container className={'items-center'}>
 				<Card tw={'max-w-4xl sm:w-2/3 w-full p-10'}>
@@ -34,6 +33,6 @@ export default function NotFoundPage() {
 					</div>
 				</Card>
 			</Container>
-		</Root>
+		</GreyBackground>
 	);
 }

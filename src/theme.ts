@@ -1,6 +1,7 @@
 import resolveConfig from 'tailwindcss/resolveConfig';
 import tailwindConfig from '../tailwind.config';
 import get from 'lodash.get';
+
 const { theme } = resolveConfig(tailwindConfig);
 export default theme;
 

@@ -1,6 +1,7 @@
 import React, { HTMLAttributes } from 'react';
 import { css } from 'twin.macro';
 import theme from '~/theme';
+
 type Props = {
 	size: number;
 	children: any;

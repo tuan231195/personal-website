@@ -1,8 +1,11 @@
 import React from 'react';
+import 'twin.macro';
 import { graphql } from 'gatsby';
-import { Container } from '~/components/ui/containers/Container';
+import {
+	Container,
+	GreyBackground,
+} from '~/components/ui/containers/Container';
 import { Card } from '~/components/ui/containers/Card';
-import tw from 'twin.macro';
 import { Icon } from '~/components/ui/icons/Icon';
 import { format } from 'date-fns';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -10,10 +13,6 @@ import { wrapRootElement } from '~/components/markdown/mdx';
 import { ColorBadge } from '~/components/ui/misc/ColorBadge';
 import { Groups } from '~/components/ui/groups/Groups';
 import { Helmet } from 'react-helmet';
-
-const Root = tw.div`
-	bg-gray-300  flex-grow py-10
-`;
 
 export const query = graphql`
 	query($slug: String!) {
@@ -35,7 +34,7 @@ const BlogTemplate = ({
 	},
 }) =>
 	wrapRootElement(
-		<Root>
+		<GreyBackground>
 			<Helmet defer={false} title={frontmatter.title} />
 			<Container>
 				<Card>
@@ -70,7 +69,7 @@ const BlogTemplate = ({
 					<MDXRenderer>{body}</MDXRenderer>
 				</Card>
 			</Container>
-		</Root>
+		</GreyBackground>
 	);
 
 export default BlogTemplate;

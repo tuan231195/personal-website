@@ -2,6 +2,7 @@ import { ProfileSection } from '~/components/home/ProfileSection';
 import React, { useEffect } from 'react';
 import GithubCalendar from 'github-calendar';
 import { styled } from 'twin.macro';
+
 const Root = styled.div`
 	.contrib-footer {
 		display: none;

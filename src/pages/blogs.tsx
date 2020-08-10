@@ -1,7 +1,8 @@
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import { BlogRoll } from '~/components/blogs/BlogRoll';
 import { Helmet } from 'react-helmet';
 import React from 'react';
+import { GreyBackground } from '~/components/ui/containers/Container';
 
 export default function Blogs() {
 	const data = useStaticQuery(graphql`
@@ -23,9 +24,9 @@ export default function Blogs() {
 	`);
 
 	return (
-		<>
+		<GreyBackground>
 			<Helmet title='Blog posts' defer={false} />
 			<BlogRoll blogs={data.allMdx.nodes} />
-		</>
+		</GreyBackground>
 	);
 }

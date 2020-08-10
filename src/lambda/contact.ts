@@ -1,8 +1,9 @@
 require('dotenv').config();
 import { contactSchema } from '~/schemas/contact';
 import sgMail from '@sendgrid/mail';
-sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
 import * as createError from 'http-errors';
+
+sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
 
 exports.handler = async (event) => {
 	try {
