@@ -19,7 +19,8 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     create: true
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "{{slug}}"}
+      - {label: "Slug", name: "slug", widget: "hidden", default: "blog-post"}
       - { name: title, label: Title }
       - { name: date, label: Date, widget: datetime }
       - { label: "Featured Image", name: "image", widget: image}
