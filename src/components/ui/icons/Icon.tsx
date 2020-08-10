@@ -26,6 +26,8 @@ export type SvgIcon =
 	| 'home'
 	| 'web'
 	| 'bag'
+	| 'calendar'
+	| 'arrow-narrow-right'
 	| 'check';
 
 export function Icon({

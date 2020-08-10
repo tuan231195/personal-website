@@ -23,6 +23,11 @@ const links = [
 		href: '/contact/',
 		icon: 'mail',
 	},
+	{
+		name: 'Blogs',
+		href: '/blogs/',
+		icon: 'mail',
+	},
 ];
 const Root = styled.nav<{ sticky: boolean }>`
 	${tw`bg-blue-600 flex flex-col sm:flex-row sm:items-center justify-between text-white relative`}

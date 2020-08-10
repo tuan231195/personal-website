@@ -18,6 +18,14 @@ module.exports = {
 	},
 	plugins: [
 		`gatsby-plugin-netlify-cms`,
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: `${__dirname}/blog`,
+				name: `blogs`,
+			},
+		},
+		`gatsby-transformer-remark`,
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-postcss`,
 		`gatsby-plugin-emotion`,
