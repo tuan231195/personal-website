@@ -21,7 +21,13 @@ export const query = graphql`
 			frontmatter {
 				tags
 				date
-				image
+				image {
+					childImageSharp {
+						fluid(maxWidth: 896) {
+							...GatsbyImageSharpFluid
+						}
+					}
+				}
 				title
 			}
 		}
@@ -36,12 +42,12 @@ const BlogTemplate = ({
 	wrapRootElement(
 		<GreyBackground>
 			<Helmet defer={false} title={frontmatter.title} />
-			<Container tw={'sm:py-6'}>
-				<Card className={'sm:max-w-6xl w-full'}>
+			<Container tw={'sm:py-6 flex items-center'}>
+				<Card className={'sm:max-w-4xl w-full'}>
 					{frontmatter.image && (
 						<Card.Image
 							style={{ maxHeight: '500px' }}
-							src={frontmatter.image}
+							fluid={frontmatter.image.childImageSharp.fluid}
 							alt={'backgroundImage'}
 						/>
 					)}

@@ -18,6 +18,13 @@ module.exports = {
 		);
 	},
 	plugins: [
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: `${__dirname}/static/img`,
+				name: `images`,
+			},
+		},
 		`gatsby-plugin-netlify-cms`,
 		{
 			resolve: `gatsby-plugin-mdx`,
@@ -28,12 +35,28 @@ module.exports = {
 				},
 				gatsbyRemarkPlugins: [
 					{
+						resolve: `gatsby-remark-relative-images`,
+					},
+					{
 						resolve: `gatsby-remark-images`,
 						options: {
-							maxWidth: 1035,
-							sizeByPixelDensity: true,
+							maxWidth: 896,
+							linkImagesToOriginal: false,
 						},
 					},
+					{
+						resolve: 'gatsby-remark-copy-linked-files',
+						options: {
+							destinationDir: 'static/',
+						},
+					},
+					{
+						resolve: `gatsby-remark-responsive-iframe`,
+						options: {
+							wrapperStyle: `margin-bottom: 1.0725rem`,
+						},
+					},
+					`gatsby-remark-external-links`,
 				],
 			},
 		},
@@ -48,18 +71,6 @@ module.exports = {
 		`gatsby-plugin-postcss`,
 		`gatsby-plugin-emotion`,
 		`gatsby-plugin-react-helmet`,
-		{
-			resolve: 'gatsby-plugin-manifest',
-			options: {
-				name: 'Schönherz Design Stúdió',
-				short_name: 'schdesign',
-				start_url: '/',
-				background_color: '#3d3d3d',
-				theme_color: '#f8485e',
-				display: 'standalone',
-				icon: 'src/images/favicon.ico',
-			},
-		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {

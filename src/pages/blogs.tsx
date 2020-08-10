@@ -12,7 +12,6 @@ export default function Blogs() {
 					excerpt(pruneLength: 400)
 					id
 					frontmatter {
-						image
 						title
 						date
 						tags

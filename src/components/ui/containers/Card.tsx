@@ -1,14 +1,32 @@
 import React, { HTMLAttributes } from 'react';
 import 'twin.macro';
+import Img from 'gatsby-image';
 
 type Props = {
 	children: any;
 } & HTMLAttributes<HTMLDivElement>;
 
-function CardImage({ className = '', alt = '', ...props }) {
+function CardImage({
+	className = '',
+	alt = '',
+	src,
+	fluid,
+	...props
+}: {
+	className?: string;
+	alt?: string;
+	src?: string;
+	fluid?: any;
+} & HTMLAttributes<HTMLImageElement>) {
+	if (fluid) {
+		return (
+			<Img {...(props as any)} fluid={fluid} className={className} alt={alt} />
+		);
+	}
 	return (
 		<img
 			{...props}
+			src={src}
 			tw={'w-full object-cover'}
 			className={className}
 			alt={alt}

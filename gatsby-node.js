@@ -1,6 +1,6 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
-const { createFilePath } = require('gatsby-source-filesystem');
+const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 
 exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
 	let config = getConfig();
@@ -74,4 +74,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 			},
 		});
 	});
+};
+
+exports.onCreateNode = ({ node }) => {
+	fmImagesToRelative(node);
 };

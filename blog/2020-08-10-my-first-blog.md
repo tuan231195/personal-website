@@ -25,4 +25,4 @@ get(object, 'value.1');
 
   * *list 2*
 
-![](/img/512px-eo_circle_lime_letter-t.svg.png "Test image")
+![](/img/beautiful-calla-lily-nice-background-color-70725804.jpg "Test image")
