@@ -1,5 +1,6 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import { BlogRoll } from '~/components/blogs/BlogRoll';
+import { Helmet } from 'react-helmet';
 import React from 'react';
 
 export default function Blogs() {
@@ -25,6 +26,9 @@ export default function Blogs() {
 	`);
 
 	return (
-		<BlogRoll blogs={data.allMarkdownRemark.edges.map(({ node }) => node)} />
+		<>
+			<Helmet title='Blog posts' defer={false} />
+			<BlogRoll blogs={data.allMarkdownRemark.edges.map(({ node }) => node)} />
+		</>
 	);
 }

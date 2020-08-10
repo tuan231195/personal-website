@@ -33,6 +33,7 @@ module.exports = {
 		'@typescript-eslint/explicit-module-boundary-types': 'off',
 		'@typescript-eslint/ban-types': 'off',
 		'@typescript-eslint/no-var-requires': 'off',
+		'react/display-name': 'off',
 	},
 	overrides: [
 		// Override some TypeScript rules just for .js files
