@@ -7,6 +7,8 @@ import { Icon } from '~/components/ui/icons/Icon';
 import { format } from 'date-fns';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { wrapRootElement } from '~/components/markdown/mdx';
+import { ColorBadge } from '~/components/ui/misc/ColorBadge';
+import { Groups } from '~/components/ui/groups/Groups';
 
 const Root = tw.div`
 	bg-gray-300  flex-grow py-10
@@ -44,7 +46,7 @@ const BlogTemplate = ({
 					)}
 					<header
 						tw={
-							'flex flex-col sm:flex-row sm:items-center sm:justify-between text-gray-700 mb-5'
+							'flex flex-col sm:flex-row sm:items-center sm:justify-between text-gray-700'
 						}
 					>
 						<h5 tw={'type-h5'}>{frontmatter.title}</h5>
@@ -58,6 +60,11 @@ const BlogTemplate = ({
 							{format(new Date(frontmatter.date), 'MMM dd, yyyy')}
 						</time>
 					</header>
+					<Groups size={2} className={`mb-6 mt-2`}>
+						{frontmatter.tags.map((tag) => (
+							<ColorBadge text={tag} key={tag} />
+						))}
+					</Groups>
 					<MDXRenderer>{body}</MDXRenderer>
 				</Card>
 			</Container>

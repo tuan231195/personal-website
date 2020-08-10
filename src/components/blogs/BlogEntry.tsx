@@ -6,14 +6,16 @@ import { Button } from '~/components/ui/controls/Button';
 import { Card } from '~/components/ui/containers/Card';
 import React from 'react';
 import { Link } from 'gatsby';
+import { ColorBadge } from '~/components/ui/misc/ColorBadge';
+import { Groups } from '~/components/ui/groups/Groups';
 
 export function BlogEntry({ blog }: { blog: Blog }) {
 	return (
 		<Card className={'sm:w-10/12 max-w-9/12 flex flex-col'}>
 			<article>
-				<div
+				<header
 					tw={
-						'flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 text-gray-700'
+						'flex flex-col sm:flex-row sm:items-center sm:justify-between text-gray-700'
 					}
 				>
 					<h5 tw={'type-h5'}>{blog.frontmatter.title}</h5>
@@ -26,8 +28,14 @@ export function BlogEntry({ blog }: { blog: Blog }) {
 						/>
 						{format(new Date(blog.frontmatter.date), 'MMM dd, yyyy')}
 					</time>
-				</div>
-				<p className={'truncate-3-lines'}>{blog.excerpt}</p>
+				</header>
+				<Groups size={2} className={`mb-4 mt-2`}>
+					{blog.frontmatter.tags.map((tag) => (
+						<ColorBadge text={tag} key={tag} />
+					))}
+				</Groups>
+
+				<p className={'truncate-3-lines h-24'}>{blog.excerpt}</p>
 			</article>
 			<Link to={`/blogs/${blog.slug}`} className={'self-end mt-4'}>
 				<Button>

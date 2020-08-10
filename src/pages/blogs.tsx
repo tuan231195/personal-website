@@ -14,6 +14,7 @@ export default function Blogs() {
 						image
 						title
 						date
+						tags
 					}
 					slug
 				}

@@ -26,7 +26,7 @@ const links = [
 	{
 		name: 'Blogs',
 		href: '/blogs/',
-		icon: 'mail',
+		icon: 'document',
 	},
 ];
 const Root = styled.nav<{ sticky: boolean }>`

@@ -20,6 +20,7 @@ export function Groups({
 			{...props}
 			css={css`
 				display: flex;
+				flex-wrap: wrap;
 				align-items: ${horizontal ? 'center' : 'stretch'};
 				flex-direction: ${horizontal ? 'row' : 'column'};
 				

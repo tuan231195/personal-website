@@ -16,6 +16,7 @@ export type SvgIcon =
 	| 'send'
 	| 'mail'
 	| 'phone'
+	| 'document'
 	| 'github'
 	| 'facebook'
 	| 'linkedin'

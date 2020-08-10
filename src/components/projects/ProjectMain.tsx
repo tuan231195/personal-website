@@ -4,11 +4,10 @@ import { Card } from '~/components/ui/containers/Card';
 import { Container } from '~/components/ui/containers/Container';
 import { Grid } from '~/components/ui/containers/Grid';
 import { GridColumn } from '~/components/ui/containers/GridColumn';
-import { Badge } from '~/components/ui/misc/Badge';
 import userProfile from '~/profile';
-import { getRandomizedColor } from '~/utils/colors';
 import { Groups } from '~/components/ui/groups/Groups';
 import { Icon } from '~/components/ui/icons/Icon';
+import { ColorBadge } from '~/components/ui/misc/ColorBadge';
 
 const Root = tw.div`
 	bg-gray-300 py-10  flex-grow
@@ -62,14 +61,11 @@ export function ProjectMain({
 										</span>
 									</div>
 									<p tw={'flex-grow'}>{project.description}</p>
-									<span tw={'flex flex-wrap items-center mt-3'}>
+									<Groups size={2} className={`mt-3`}>
 										{project.tags.map((tag) => (
-											<Badge key={tag} color={getRandomizedColor(tag)}>
-												{' '}
-												{tag}{' '}
-											</Badge>
+											<ColorBadge key={tag} text={tag} className={'mb-2'} />
 										))}
-									</span>
+									</Groups>
 								</Card>
 							</GridColumn>
 						);
