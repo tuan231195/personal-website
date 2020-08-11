@@ -25,7 +25,6 @@ module.exports = {
 				name: `images`,
 			},
 		},
-		`gatsby-plugin-netlify-cms`,
 		{
 			resolve: `gatsby-plugin-mdx`,
 			options: {
@@ -61,6 +60,7 @@ module.exports = {
 				],
 			},
 		},
+		`gatsby-plugin-netlify-cms`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
