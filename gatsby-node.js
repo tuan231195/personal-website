@@ -65,12 +65,29 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 		return;
 	}
 
-	result.data.allMdx.nodes.forEach((node) => {
+	const posts = result.data.allMdx.nodes;
+	const postsPerPage = 6;
+	const numPages = Math.ceil(posts.length / postsPerPage);
+
+	Array.from({ length: numPages }).forEach((_, i) => {
 		createPage({
-			path: `/blogs/${node.slug}`,
+			path: i === 0 ? `/blogs` : `/blogs/${i + 1}`,
+			component: path.resolve('./src/templates/Blogs.tsx'),
+			context: {
+				limit: postsPerPage,
+				skip: i * postsPerPage,
+				numPages,
+				currentPage: i + 1,
+			},
+		});
+	});
+
+	posts.forEach((post) => {
+		createPage({
+			path: `/blogs/${post.slug}`,
 			component: blogPostTemplate,
 			context: {
-				slug: node.slug,
+				slug: post.slug,
 			},
 		});
 	});

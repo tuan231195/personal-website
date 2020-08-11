@@ -11,7 +11,7 @@ import { Groups } from '~/components/ui/groups/Groups';
 
 export function BlogEntry({ blog }: { blog: Blog }) {
 	return (
-		<Card className={'sm:w-10/12 max-w-9/12 flex flex-col'}>
+		<Card className={'flex flex-col'}>
 			<article>
 				<header
 					tw={

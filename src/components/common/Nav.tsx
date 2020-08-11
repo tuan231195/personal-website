@@ -27,6 +27,7 @@ const links = [
 		name: 'Blogs',
 		href: '/blogs/',
 		icon: 'document',
+		partiallyActive: true,
 	},
 ];
 const Root = styled.nav<{ sticky: boolean }>`
@@ -175,6 +176,7 @@ export function Nav({ profile: { github, linkedin, facebook }, location }) {
 						<NavLink
 							to={link.href}
 							key={index}
+							partiallyActive={link.partiallyActive}
 							activeClassName='bg-accent'
 							className={'py-2 px-2'}
 						>

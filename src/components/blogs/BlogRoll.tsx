@@ -1,16 +1,19 @@
 import 'twin.macro';
-import { Container } from '~/components/ui/containers/Container';
 import React from 'react';
 import { Blog } from '~/types/blog';
 import { BlogEntry } from '~/components/blogs/BlogEntry';
+import { Groups } from '~/components/ui/groups/Groups';
 
 export function BlogRoll({ blogs }: { blogs: Blog[] }) {
 	return (
-		<Container className={'items-center px-5 py-6'}>
-			<h4 tw={'type-h4 text-center mb-4'}>Blogs</h4>
+		<Groups
+			size={5}
+			orientation={'vertical'}
+			className={`sm:w-9/12 md:max-w-8/12`}
+		>
 			{blogs.map((blog) => (
 				<BlogEntry blog={blog} key={blog.id} />
 			))}
-		</Container>
+		</Groups>
 	);
 }
