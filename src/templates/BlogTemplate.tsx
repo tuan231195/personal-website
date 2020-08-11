@@ -1,6 +1,6 @@
 import React from 'react';
 import 'twin.macro';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import {
 	Container,
 	GreyBackground,
@@ -69,7 +69,9 @@ const BlogTemplate = ({
 					</header>
 					<Groups size={2} className={`mb-6 mt-2`}>
 						{frontmatter.tags.map((tag) => (
-							<ColorBadge text={tag} key={tag} />
+							<Link to={`/tags/${tag.toLowerCase()}`} key={tag}>
+								<ColorBadge text={tag} />
+							</Link>
 						))}
 					</Groups>
 					<MDXRenderer>{body}</MDXRenderer>

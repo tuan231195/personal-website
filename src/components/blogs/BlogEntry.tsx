@@ -31,7 +31,9 @@ export function BlogEntry({ blog }: { blog: Blog }) {
 				</header>
 				<Groups size={2} className={`mb-4 mt-2`}>
 					{blog.frontmatter.tags.map((tag) => (
-						<ColorBadge text={tag} key={tag} />
+						<Link to={`/tags/${tag.toLowerCase()}`} key={tag}>
+							<ColorBadge text={tag} />
+						</Link>
 					))}
 				</Groups>
 
