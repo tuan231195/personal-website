@@ -7,13 +7,13 @@ import {
 import { Card } from '~/components/ui/containers/Card';
 import { wrapRootElement } from '~/components/markdown/mdx';
 import { useSiteMetadata } from '~/utils/hooks/site-metadata';
-import { Helmet } from 'react-helmet';
+import { SEO } from '~/components/common/SEO';
 
 const PageTemplate = ({ children }) => {
 	const { title } = useSiteMetadata();
 	return wrapRootElement(
 		<GreyBackground>
-			<Helmet defer={false} title={title} />
+			<SEO title={title} />
 			<Container tw={'sm:py-6'}>
 				<Card>{children}</Card>
 			</Container>

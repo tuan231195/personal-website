@@ -2,9 +2,13 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = {
 	siteMetadata: {
-		title: `Tuan Nguyen's personal website`,
+		title: `Tuan Nguyen`,
 		author: `Tuan Nguyen`,
-		description: 'A simple website created using Gatsby',
+		description: `Tuan Nguyen's personal website`,
+		siteUrl: `https://vdtn359.com.au/`,
+		social: {
+			twitter: `vdtn359`,
+		},
 	},
 	developMiddleware: (app) => {
 		app.use(

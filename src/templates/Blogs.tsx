@@ -1,6 +1,5 @@
-import { graphql } from 'gatsby';
+import { graphql, navigate } from 'gatsby';
 import { BlogRoll } from '~/components/blogs/BlogRoll';
-import { Helmet } from 'react-helmet';
 import React from 'react';
 import 'twin.macro';
 import {
@@ -8,13 +7,13 @@ import {
 	GreyBackground,
 } from '~/components/ui/containers/Container';
 import { Pagination } from '~/components/ui/containers/Pagination';
-import { navigate } from 'gatsby';
+import { SEO } from '~/components/common/SEO';
 
 export default function Blogs({ data, pageContext }) {
 	const { currentPage, numPages } = pageContext;
 	return (
 		<GreyBackground>
-			<Helmet title='Blog posts' defer={false} />
+			<SEO title='Blog posts' />
 			<Container className={'items-center px-5 py-6'}>
 				<h4 tw={'type-h4 text-center mb-4'}>Blogs</h4>
 				<BlogRoll blogs={data.allMdx.nodes} />

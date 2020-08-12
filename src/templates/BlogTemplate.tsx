@@ -12,7 +12,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { wrapRootElement } from '~/components/markdown/mdx';
 import { ColorBadge } from '~/components/ui/misc/ColorBadge';
 import { Groups } from '~/components/ui/groups/Groups';
-import { Helmet } from 'react-helmet';
+import { SEO } from '~/components/common/SEO';
 
 export const query = graphql`
 	query($slug: String!) {
@@ -41,7 +41,7 @@ const BlogTemplate = ({
 }) =>
 	wrapRootElement(
 		<GreyBackground>
-			<Helmet defer={false} title={frontmatter.title} />
+			<SEO title={frontmatter.title} />
 			<Container tw={'sm:py-6 flex items-center'}>
 				<Card className={'sm:max-w-4xl w-full'}>
 					{frontmatter.image && (

@@ -2,12 +2,12 @@ import React from 'react';
 import 'twin.macro';
 import { ProjectMain } from '~/components/projects/ProjectMain';
 import profile from '~/profile';
-import { Helmet } from 'react-helmet';
 import { GreyBackground } from '~/components/ui/containers/Container';
+import { SEO } from '~/components/common/SEO';
 
 const ProjectPage = () => (
 	<GreyBackground>
-		<Helmet title='Projects' defer={false} />
+		<SEO title='Projects' />
 		<ProjectMain projects={profile.projects} />
 	</GreyBackground>
 );

@@ -1,12 +1,12 @@
 import React from 'react';
 import 'twin.macro';
 import { ContactMain } from '~/components/contact/ContactMain';
-import { Helmet } from 'react-helmet';
 import { GreyBackground } from '~/components/ui/containers/Container';
+import { SEO } from '~/components/common/SEO';
 
 const ContactPage = () => (
 	<GreyBackground>
-		<Helmet title='Contact me' defer={false} />
+		<SEO title='Contact me' />
 		<ContactMain />
 	</GreyBackground>
 );
