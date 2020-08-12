@@ -8,15 +8,17 @@ import {
 } from '~/components/ui/containers/Container';
 import { Pagination } from '~/components/ui/containers/Pagination';
 import { SEO } from '~/components/common/SEO';
+import { flattenBlogNode } from '~/types/blog';
 
 export default function TaggedBlogs({ data, pageContext }) {
 	const { tag, currentPage, numPages } = pageContext;
+	const blogs = data.allMdx.nodes.map(flattenBlogNode);
 	return (
 		<GreyBackground>
 			<SEO title={`Tags: ${tag}`} />
 			<Container className={'items-center px-5 py-6'}>
 				<h4 tw={'type-h4 text-center mb-4'}>Tags: {tag}</h4>
-				<BlogRoll blogs={data.allMdx.nodes} />
+				<BlogRoll blogs={blogs} />
 				{numPages > 1 && (
 					<div tw={'mt-4'}>
 						<Pagination

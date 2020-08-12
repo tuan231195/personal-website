@@ -1,4 +1,6 @@
+require('dotenv').config();
 const { createProxyMiddleware } = require('http-proxy-middleware');
+const { queries } = require('./src/utils/algolia');
 
 module.exports = {
 	siteMetadata: {
@@ -114,8 +116,15 @@ module.exports = {
 				icon: `src/images/favicon.ico`,
 			},
 		},
-		// this (optional) plugin enables Progressive Web App + Offline functionality
-		// To learn more, visit: https://gatsby.dev/offline
 		`gatsby-plugin-offline`,
+		{
+			resolve: `gatsby-plugin-algolia`,
+			options: {
+				appId: process.env.GATSBY_ALGOLIA_APP_ID,
+				apiKey: process.env.ALGOLIA_ADMIN_KEY,
+				queries,
+				chunkSize: 10000, // default: 1000
+			},
+		},
 	],
 };

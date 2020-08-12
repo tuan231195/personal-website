@@ -1,11 +1,17 @@
 export interface Blog {
 	excerpt: string;
 	slug: string;
-	frontmatter: {
-		tags: string[];
-		date: string;
-		image: string;
-		title: string;
-	};
+	tags: string[];
+	date: string;
+	image: any;
+	body: string;
+	title: string;
 	id: string;
+}
+
+export function flattenBlogNode({ frontmatter, ...rest }): Blog {
+	return {
+		...rest,
+		...frontmatter,
+	};
 }

@@ -3,12 +3,12 @@ import 'twin.macro';
 import cn from 'classnames';
 import { noop } from '~/utils/functions';
 
-type Props = {
+type Props = Omit<HTMLAttributes<HTMLTextAreaElement>, 'onChange'> & {
 	label?: string;
 	error?: string;
 	name?: string;
 	onChange?: (e: ChangeEvent<HTMLTextAreaElement>, { value: any }) => void;
-} & HTMLAttributes<HTMLTextAreaElement>;
+};
 
 export function TextAreaField({
 	label,

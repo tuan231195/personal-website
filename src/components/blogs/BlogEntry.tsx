@@ -18,7 +18,7 @@ export function BlogEntry({ blog }: { blog: Blog }) {
 						'flex flex-col sm:flex-row sm:items-center sm:justify-between text-gray-700'
 					}
 				>
-					<h5 tw={'type-h5'}>{blog.frontmatter.title}</h5>
+					<h5 tw={'type-h5'}>{blog.title}</h5>
 					<time tw={'font-semibold flex items-center'}>
 						<Icon
 							size={16}
@@ -26,11 +26,11 @@ export function BlogEntry({ blog }: { blog: Blog }) {
 							name={'calendar'}
 							className={'mr-2'}
 						/>
-						{format(new Date(blog.frontmatter.date), 'MMM dd, yyyy')}
+						{format(new Date(blog.date), 'MMM dd, yyyy')}
 					</time>
 				</header>
 				<Groups size={2} className={`mb-4 mt-2`}>
-					{blog.frontmatter.tags.map((tag) => (
+					{blog.tags.map((tag) => (
 						<Link to={`/tags/${tag.toLowerCase()}`} key={tag}>
 							<ColorBadge text={tag} />
 						</Link>

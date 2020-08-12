@@ -1,10 +1,11 @@
+require('dotenv').config();
 const path = require('path');
 const { merge } = require('webpack-merge');
 const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 
 const postsPerPage = 6;
 
-exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
+exports.onCreateWebpackConfig = ({ actions, getConfig, plugins }) => {
 	let config = getConfig();
 	config.module.rules = config.module.rules.map((item) => {
 		const { test } = item;
@@ -27,6 +28,19 @@ exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
 					'~': path.resolve(__dirname, 'src'),
 				},
 			},
+			plugins: [
+				plugins.define(
+					[
+						'GATSBY_ALGOLIA_SEARCH_KEY',
+						'GATSBY_ALGOLIA_APP_ID',
+						'ALGOLIA_INDEX_NAME',
+					].reduce((agg, current) => ({
+						...agg,
+						[`process.env.${current}`]: JSON.stringify(process.env[current]),
+					})),
+					{}
+				),
+			],
 			module: {
 				rules: [
 					{

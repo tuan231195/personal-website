@@ -3,12 +3,13 @@ import 'twin.macro';
 import cn from 'classnames';
 import { noop } from '~/utils/functions';
 
-type Props = {
+type Props = Omit<HTMLAttributes<HTMLInputElement>, 'onChange'> & {
 	label?: string;
 	error?: string;
+	value?: string;
 	name?: string;
 	onChange?: (e: ChangeEvent<HTMLInputElement>, { value: any }) => void;
-} & HTMLAttributes<HTMLInputElement>;
+};
 
 export function TextField({
 	label,
