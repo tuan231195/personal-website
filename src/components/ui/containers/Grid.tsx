@@ -26,11 +26,13 @@ export function Grid({
 	return (
 		<div className={`flex flex-wrap overflow-hidden min-w-full ${className}`}>
 			{React.Children.map(children, (child: any, i) => {
-				const { props } = child;
+				const {
+					props: { className, ...props },
+				} = child;
 				return (
 					<GridColumn
 						key={i}
-						className={cn(` sm:py-${smGap}`, {
+						className={cn(className, ` sm:py-${smGap}`, {
 							'px-0': collapse,
 							'py-0': collapse,
 							[`px-${gap}`]: gap && !collapse,
