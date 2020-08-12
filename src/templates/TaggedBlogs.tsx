@@ -9,6 +9,7 @@ import {
 import { Pagination } from '~/components/ui/containers/Pagination';
 import { SEO } from '~/components/common/SEO';
 import { flattenBlogNode } from '~/types/blog';
+import { SearchProvider } from '~/components/search/SearchProvider';
 
 export default function TaggedBlogs({ data, pageContext }) {
 	const { tag, currentPage, numPages } = pageContext;
@@ -18,25 +19,31 @@ export default function TaggedBlogs({ data, pageContext }) {
 			<SEO title={`Tags: ${tag}`} />
 			<Container className={'items-center px-5 py-6'}>
 				<h4 tw={'type-h4 text-center mb-4'}>Tags: {tag}</h4>
-				<BlogRoll blogs={blogs} />
-				{numPages > 1 && (
-					<div tw={'mt-4'}>
-						<Pagination
-							numPages={numPages}
-							current={currentPage}
-							onSelect={(newPage) => {
-								if (newPage === currentPage) {
-									return;
-								}
-								navigate(
-									newPage === 1
-										? `/tags/${tag.toLowerCase()}`
-										: `/tags/${tag.toLowerCase()}/${newPage}`
-								);
-							}}
-						/>
-					</div>
-				)}
+				<SearchProvider
+					settings={{
+						tagFilters: [tag],
+					}}
+				>
+					<BlogRoll blogs={blogs} />
+					{numPages > 1 && (
+						<div tw={'mt-4'}>
+							<Pagination
+								numPages={numPages}
+								current={currentPage}
+								onSelect={(newPage) => {
+									if (newPage === currentPage) {
+										return;
+									}
+									navigate(
+										newPage === 1
+											? `/tags/${tag.toLowerCase()}`
+											: `/tags/${tag.toLowerCase()}/${newPage}`
+									);
+								}}
+							/>
+						</div>
+					)}
+				</SearchProvider>
 			</Container>
 		</GreyBackground>
 	);

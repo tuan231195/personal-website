@@ -10,14 +10,14 @@ const searchClient = algoliasearch(
 	process.env.GATSBY_ALGOLIA_SEARCH_KEY as string
 );
 
-export function SearchProvider({ children }) {
+export function SearchProvider({ children, settings = {} }) {
 	const [hasInput, setHasInput] = useState(false);
 	return (
 		<InstantSearch
 			searchClient={searchClient}
 			indexName={process.env.ALGOLIA_INDEX_NAME as string}
 		>
-			<Configure hitsPerPage={5} typoTolerance={false} />
+			<Configure hitsPerPage={5} typoTolerance={false} {...settings} />
 			<SearchBox
 				onChange={(value) => {
 					setHasInput(!!value);
