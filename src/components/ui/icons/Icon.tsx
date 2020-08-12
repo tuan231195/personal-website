@@ -32,6 +32,7 @@ export type SvgIcon =
 	| 'arrow-left'
 	| 'arrow-right'
 	| 'arrow-narrow-right'
+	| 'sad'
 	| 'check';
 
 export function Icon({

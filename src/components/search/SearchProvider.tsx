@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, Configure } from 'react-instantsearch-dom';
+import { Configure, InstantSearch } from 'react-instantsearch-dom';
 import { SearchBox } from '~/components/search/SearchBox';
 import { Hits } from '~/components/search/Hits';
 import { BlogRoll } from '~/components/blogs/BlogRoll';
