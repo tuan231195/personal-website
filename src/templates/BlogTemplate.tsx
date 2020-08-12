@@ -13,11 +13,13 @@ import { wrapRootElement } from '~/components/markdown/mdx';
 import { ColorBadge } from '~/components/ui/misc/ColorBadge';
 import { Groups } from '~/components/ui/groups/Groups';
 import { SEO } from '~/components/common/SEO';
+import { DisqusComments } from '~/components/blogs/DisqusComments';
 
 export const query = graphql`
 	query($slug: String!) {
 		mdx(slug: { eq: $slug }) {
 			body
+			slug
 			frontmatter {
 				tags
 				date
@@ -36,7 +38,7 @@ export const query = graphql`
 
 const BlogTemplate = ({
 	data: {
-		mdx: { body, frontmatter },
+		mdx: { body, frontmatter, slug },
 	},
 }) =>
 	wrapRootElement(
@@ -75,6 +77,7 @@ const BlogTemplate = ({
 						))}
 					</Groups>
 					<MDXRenderer>{body}</MDXRenderer>
+					<DisqusComments slug={slug} title={frontmatter.title} />
 				</Card>
 			</Container>
 		</GreyBackground>
