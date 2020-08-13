@@ -10,7 +10,7 @@ Sometimes, I find myself constrained by the limited functionalities provided by 
 
 Let's define a few utility functions
 
-```
+```typescript
 export function wrap<W extends object, B>(wrapper: W, base: B): W & B {
 	const proxy = new Proxy(wrapper, {
 		get(target, property) {
@@ -43,7 +43,7 @@ The \`wrap\` method takes in 2 arguments: a wrapper object and a base object. It
 
 A sample use case where I extend the IORedis library:
 
-```
+```typescript
 import IORedis from 'ioredis';
 import { from, interval, Observable } from 'rxjs';
 import { concatMap, filter, flatMap } from 'rxjs/operators';

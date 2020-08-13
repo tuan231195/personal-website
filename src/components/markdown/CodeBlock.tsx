@@ -33,13 +33,13 @@ export const LineContent = styled.span`
 	display: table-cell;
 `;
 
-export function CodeBlock({ children, className }) {
-	const language = className.replace(/language-/, '');
+export function CodeBlock({ children, className = '' }) {
+	const language = className.replace(/language-/, '') || 'javascript';
 	return (
 		<Highlight
 			{...defaultProps}
 			code={children}
-			language={language}
+			language={language as any}
 			theme={theme}
 		>
 			{({ className, style, tokens, getLineProps, getTokenProps }) => (
