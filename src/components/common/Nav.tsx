@@ -165,7 +165,7 @@ export function Nav({ profile: { github, linkedin, facebook }, location }) {
 
 			<div
 				tw={
-					'self-stretch sm:flex bg-blue-600 flex-col sm:flex-row sm:items-center sm:w-auto absolute sm:static top-full w-full'
+					'self-stretch sm:flex bg-blue-600 flex-col sm:flex-row sm:items-center sm:w-auto z-10 absolute sm:static top-full w-full'
 				}
 				className={cn({
 					hidden: !open,

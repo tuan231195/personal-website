@@ -7,7 +7,7 @@ const component = {
 	pre: (props) => <div {...props} />,
 	code: CodeBlock,
 	inlineCode: (props) => (
-		<span tw={'bg-inline-code p-1 rounded-sm'} {...props} />
+		<span tw={'bg-inline-code px-1 py-px rounded-sm'} {...props} />
 	),
 };
 export const wrapRootElement = (element) => {
