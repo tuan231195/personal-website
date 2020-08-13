@@ -37,7 +37,9 @@ export function BlogEntry({ blog }: { blog: Blog }) {
 					))}
 				</Groups>
 
-				<p className={'truncate-3-lines h-24'}>{blog.excerpt}</p>
+				<div tw={'h-24'}>
+					<p className={'truncate-3-lines'}>{blog.excerpt}</p>
+				</div>
 			</article>
 			<Link to={`/blogs/${blog.slug}`} className={'self-end mt-4'}>
 				<Button>
