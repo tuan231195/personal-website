@@ -1,5 +1,5 @@
 import React from 'react';
-import 'twin.macro';
+import { styled, theme } from 'twin.macro';
 import { graphql, Link } from 'gatsby';
 import {
 	Container,
@@ -34,6 +34,16 @@ export const query = graphql`
 				title
 			}
 		}
+	}
+`;
+
+const Article = styled.main`
+	a {
+		color: ${theme`colors.link`};
+	}
+
+	p {
+		padding: ${theme`spacing.1`};
 	}
 `;
 
@@ -74,7 +84,9 @@ const BlogTemplate = ({ data: { mdx: node } }) => {
 							</Link>
 						))}
 					</Groups>
-					<MDXRenderer>{blog.body}</MDXRenderer>
+					<Article>
+						<MDXRenderer>{blog.body}</MDXRenderer>
+					</Article>
 					<DisqusComments slug={blog.slug} title={blog.title} />
 				</Card>
 			</Container>

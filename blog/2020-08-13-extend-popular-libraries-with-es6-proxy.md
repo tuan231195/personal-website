@@ -39,7 +39,7 @@ export function getProperty(object, property, proxy) {
 
 ```
 
-The \`wrap\` method takes in 2 arguments: a wrapper object and a base object. It returns a proxy object that upon a property access will first check the property against the wrapper object. If not found, it will try to fall back to the base object to look for the property.
+The `wrap` method takes in 2 arguments: a wrapper object and a base object. It returns a proxy object that upon a property access will first check the property against the wrapper object. If not found, it will try to fall back to the base object to look for the property.
 
 A sample use case where I extend the IORedis library:
 
@@ -79,7 +79,7 @@ const redis = connectRedis({ host: 'localhost', port: 6379 });
 // redis.readStream(...)
 ```
 
-The \`connectRedis\` method will first attempt to create the base \`ioredis\` object that we want to wrap using the \`connectOptions\`. It will then pass the \`ioredis\` instance into a wrapper. After that, the \`wrap\` method is used to create a proxy object, which encompass all the properties and methods from the \`ioredis\` instance and also the \`RedisWrapper\` extension class that we define. 
+The `connectRedis` method will first attempt to create the base `ioredis` object that we want to wrap using the `connectOptions`. It will then pass the `ioredis` instance into a wrapper. After that, the `wrap` method is used to create a proxy object, which encompass all the properties and methods from the `ioredis` instance and also the `RedisWrapper` extension class that we define. 
 
 You can find the full source code in this [github](https://github.com/tuan231195/vdtn359-news/blob/develop/packages/schema/src/redis/redis.ts).
 

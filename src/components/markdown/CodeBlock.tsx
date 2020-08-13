@@ -1,6 +1,6 @@
 import { styled } from 'twin.macro';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/nightOwl';
+import theme from 'prism-react-renderer/themes/vsDark';
 import React from 'react';
 
 export const Pre = styled.pre`
