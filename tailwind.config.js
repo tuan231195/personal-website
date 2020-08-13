@@ -11,60 +11,12 @@ module.exports = {
 			default: '0 2px 5px rgba(0, 0, 0, 0.5)',
 			lg: '0 2px 10px rgba(0, 0, 0, 0.5)',
 		},
-		textDecorationStyle: {
-			// defaults to these values
-			solid: 'solid',
-			double: 'double',
-			dotted: 'dotted',
-			dashed: 'dashed',
-			wavy: 'wavy',
-		},
-		textDecorationColor: {
-			// defaults to theme => theme('colors')
-			red: '#f00',
-			green: '#0f0',
-			blue: '#00f',
-		},
-		fontVariantCaps: {
-			// defaults to these values
-			normal: 'normal',
-			small: 'small-caps',
-			'all-small': 'all-small-caps',
-			petite: 'petite-caps',
-			unicase: 'unicase',
-			titling: 'titling-caps',
-		},
-		fontVariantNumeric: {
-			// defaults to these values
-			normal: 'normal',
-			ordinal: 'ordinal',
-			'slashed-zero': 'slashed-zero',
-			lining: 'lining-nums',
-			oldstyle: 'oldstyle-nums',
-			proportional: 'proportional-nums',
-			tabular: 'tabular-nums',
-			'diagonal-fractions': 'diagonal-fractions',
-			'stacked-fractions': 'stacked-fractions',
-		},
-		fontVariantLigatures: {
-			// defaults to these values
-			normal: 'normal',
-			none: 'none',
-			common: 'common-ligatures',
-			'no-common': 'no-common-ligatures',
-			discretionary: 'discretionary-ligatures',
-			'no-discretionary': 'no-discretionary-ligatures',
-			historical: 'historical-ligatures',
-			'no-historical': 'no-historical-ligatures',
-			contextual: 'contextual',
-			'no-contextual': 'no-contextual',
-		},
-		textRendering: {
-			// defaults to these values
-			'rendering-auto': 'auto',
-			'optimize-legibility': 'optimizeLegibility',
-			'optimize-speed': 'optimizeSpeed',
-			'geometric-precision': 'geometricPrecision',
+		truncate: {
+			lines: {
+				3: '3',
+				5: '5',
+				8: '8',
+			},
 		},
 		textStyles: (theme) => ({
 			// defaults to {}
@@ -105,7 +57,7 @@ module.exports = {
 			},
 			link: {
 				fontWeight: theme('fontWeight.bold'),
-				color: theme('colors.blue.400'),
+				color: theme('colors.blue.500'),
 				'&:hover': {
 					color: theme('colors.blue.600'),
 					textDecoration: 'underline',
@@ -176,32 +128,13 @@ module.exports = {
 			center: true,
 		},
 	},
-	variants: {
-		// all the following default to ['responsive']
-		textIndent: ['responsive'],
-		textShadow: ['responsive'],
-		textDecorationStyle: ['responsive'],
-		textDecorationColor: ['responsive'],
-		ellipsis: ['responsive'],
-		hyphens: ['responsive'],
-		kerning: ['responsive'],
-		textUnset: ['responsive'],
-		fontVariantCaps: ['responsive'],
-		fontVariantNumeric: ['responsive'],
-		fontVariantLigatures: ['responsive'],
-		textRendering: ['responsive'],
-	},
 	corePlugins: {
 		container: true,
 	},
 	plugins: [
 		require('tailwindcss-typography')({
-			// all these options default to the values specified here
-			ellipsis: true, // whether to generate ellipsis utilities
-			hyphens: true, // whether to generate hyphenation utilities
-			kerning: true, // whether to generate kerning utilities
-			textUnset: true, // whether to generate utilities to unset text properties
-			componentPrefix: 'type-', // the prefix to use for text style classes
+			componentPrefix: 'type-',
 		}),
+		require('./tailwindcss/plugins/truncate-lines'),
 	],
 };

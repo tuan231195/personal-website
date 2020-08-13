@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, theme } from 'twin.macro';
+import tw, { styled, theme } from 'twin.macro';
 import { graphql, Link } from 'gatsby';
 import {
 	Container,
@@ -39,7 +39,7 @@ export const query = graphql`
 
 const Article = styled.main`
 	a {
-		color: ${theme`colors.link`};
+		${tw`type-link`};
 	}
 
 	p {
