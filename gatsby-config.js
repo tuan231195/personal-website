@@ -91,17 +91,6 @@ module.exports = {
 				component: require.resolve(`./src/layout/Index.tsx`),
 			},
 		},
-		{
-			resolve: `gatsby-plugin-prefetch-google-fonts`,
-			options: {
-				fonts: [
-					{
-						family: `Lato`,
-						variants: ['300', '400', `700`, `900`],
-					},
-				],
-			},
-		},
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		{

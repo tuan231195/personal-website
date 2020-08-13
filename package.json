@@ -30,6 +30,7 @@
     "react-helmet": "^6.1.0",
     "react-instantsearch-dom": "^6.7.0",
     "react-toastify": "^6.0.8",
+    "typeface-montserrat": "0.0.75",
     "yup": "^0.29.3"
   },
   "devDependencies": {
