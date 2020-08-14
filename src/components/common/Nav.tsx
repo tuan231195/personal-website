@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import tw, { styled, theme } from 'twin.macro';
 import { Icon } from '~/components/ui/icons/Icon';
 import { Link } from 'gatsby';
@@ -6,6 +6,7 @@ import { Groups } from '~/components/ui/groups/Groups';
 import cn from 'classnames';
 import { useStateRef } from '~/utils/hooks/basic';
 import { offsetToDocument } from '~/utils/dom/offset';
+import { useWindowEvent } from '~/utils/hooks/events';
 
 const links = [
 	{
@@ -94,8 +95,9 @@ const HamburgerButton = styled.button<{ open: boolean }>`
 `;
 
 export function Nav({ profile: { github, linkedin, facebook }, location }) {
-	const [open, setOpen] = useState(false);
+	const [openGetter, setOpen] = useStateRef(false);
 	const [stickyGetter, setSticky] = useStateRef(false);
+	const navRef = useRef<HTMLElement>(null);
 
 	useEffect(() => {
 		const content = document.getElementById('content');
@@ -120,8 +122,21 @@ export function Nav({ profile: { github, linkedin, facebook }, location }) {
 			window.removeEventListener('scroll', listener);
 		};
 	}, [location.pathname]);
+
+	const clickEventCallback = useCallback((e) => {
+		if (!openGetter()) {
+			return;
+		}
+		if (navRef.current?.contains(e.target)) {
+			return;
+		}
+		setOpen(false);
+	}, []);
+
+	useWindowEvent('click', clickEventCallback);
+
 	return (
-		<Root sticky={stickyGetter()}>
+		<Root sticky={stickyGetter()} ref={navRef}>
 			<div tw={'flex items-center justify-between'}>
 				<Groups
 					className={'flex p-2 items-center justify-center md:justify-start'}
@@ -153,10 +168,10 @@ export function Nav({ profile: { github, linkedin, facebook }, location }) {
 					</a>
 				</Groups>
 				<HamburgerButton
-					open={open}
+					open={openGetter()}
 					aria-label={'menu'}
 					type='button'
-					onClick={() => setOpen(!open)}
+					onClick={() => setOpen(!openGetter())}
 				>
 					<span />
 					<span />
@@ -168,7 +183,7 @@ export function Nav({ profile: { github, linkedin, facebook }, location }) {
 					'self-stretch sm:flex bg-blue-600 flex-col sm:flex-row sm:items-center sm:w-auto z-10 absolute sm:static top-full w-full'
 				}
 				className={cn({
-					hidden: !open,
+					hidden: !openGetter(),
 				})}
 			>
 				{links.map((link, index) => {
@@ -176,6 +191,7 @@ export function Nav({ profile: { github, linkedin, facebook }, location }) {
 						<NavLink
 							to={link.href}
 							key={index}
+							onClick={() => setOpen(false)}
 							partiallyActive={link.partiallyActive}
 							activeClassName='bg-accent'
 							className={'py-2 px-2'}

@@ -7,6 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Layout({ children, location }) {
+	if (location.pathname === '/offline-plugin-app-shell-fallback') return null;
 	return (
 		<div tw={'min-h-screen flex flex-col'}>
 			<ToastContainer hideProgressBar={true} autoClose={2000} />
