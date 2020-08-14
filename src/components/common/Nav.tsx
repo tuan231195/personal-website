@@ -143,6 +143,14 @@ export function Nav({ profile: { github, linkedin, facebook }, location }) {
 					size={2}
 				>
 					<a
+						href={'/rss.xml'}
+						target={'_blank'}
+						aria-label='github'
+						rel={'noreferrer'}
+					>
+						<Icon name={'rss'} size={24} />
+					</a>
+					<a
 						href={github}
 						target={'_blank'}
 						aria-label='github'
