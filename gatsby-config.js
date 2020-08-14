@@ -115,5 +115,55 @@ module.exports = {
 				chunkSize: 10000, // default: 1000
 			},
 		},
+		{
+			resolve: `gatsby-plugin-feed`,
+			options: {
+				query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+              }
+            }
+          }
+        `,
+				feeds: [
+					{
+						serialize: ({ query: { site, docs } }) => {
+							return docs.nodes.map((node) => {
+								return Object.assign({}, node.frontmatter, {
+									description: node.excerpt,
+									date: node.frontmatter.date,
+									url: site.siteMetadata.siteUrl + node.slug,
+									guid: site.siteMetadata.siteUrl + node.slug,
+									custom_elements: [{ 'content:encoded': node.html }],
+								});
+							});
+						},
+						query: `
+              {
+                docs: allMdx(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  nodes {
+										excerpt
+										html
+										slug
+										frontmatter {
+											title
+											date
+										}
+									}
+                }
+              }
+            `,
+						output: '/rss.xml',
+						title: "Your Site's RSS Feed",
+					},
+				],
+			},
+		},
 	],
 };
