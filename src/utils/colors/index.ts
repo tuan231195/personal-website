@@ -4,13 +4,15 @@ export function getRandomizedColor(text: string) {
 		'red',
 		'green',
 		'teal',
+		'indigo',
+		'pink',
 		'orange',
 		'yellow',
 		'purple',
 	];
 	let total = 0;
-	for (const ch of text) {
-		total += ch.charCodeAt(0);
-	}
+	Array.from(text).forEach((ch, index) => {
+		total += ch.charCodeAt(0) * Math.pow(2, index);
+	});
 	return randomColors[total % randomColors.length];
 }

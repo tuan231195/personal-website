@@ -15,6 +15,7 @@ import { Groups } from '~/components/ui/groups/Groups';
 import { SEO } from '~/components/common/SEO';
 import { DisqusComments } from '~/components/blogs/DisqusComments';
 import { flattenBlogNode } from '~/types/blog';
+import sort from 'lodash.sortby';
 
 export const query = graphql`
 	query($slug: String!) {
@@ -78,7 +79,7 @@ const BlogTemplate = ({ data: { mdx: node } }) => {
 						</time>
 					</header>
 					<Groups size={2} className={`mb-6 mt-2`}>
-						{blog.tags.map((tag) => (
+						{sort(blog.tags).map((tag) => (
 							<Link to={`/tags/${tag.toLowerCase()}`} key={tag}>
 								<ColorBadge text={tag} />
 							</Link>

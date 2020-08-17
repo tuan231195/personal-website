@@ -6,6 +6,7 @@ import { Button } from '~/components/ui/controls/Button';
 import { Card } from '~/components/ui/containers/Card';
 import React from 'react';
 import { Link } from 'gatsby';
+import sort from 'lodash.sortby';
 import { ColorBadge } from '~/components/ui/misc/ColorBadge';
 import { Groups } from '~/components/ui/groups/Groups';
 
@@ -30,7 +31,7 @@ export function BlogEntry({ blog }: { blog: Blog }) {
 					</time>
 				</header>
 				<Groups size={2} className={`mb-4 mt-2`}>
-					{blog.tags.map((tag) => (
+					{sort(blog.tags).map((tag) => (
 						<Link to={`/tags/${tag.toLowerCase()}`} key={tag}>
 							<ColorBadge text={tag} />
 						</Link>

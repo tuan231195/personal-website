@@ -8,6 +8,7 @@ import userProfile from '~/profile';
 import { Groups } from '~/components/ui/groups/Groups';
 import { Icon } from '~/components/ui/icons/Icon';
 import { ColorBadge } from '~/components/ui/misc/ColorBadge';
+import sort from 'lodash.sortby';
 
 export function ProjectMain({
 	projects,
@@ -53,7 +54,7 @@ export function ProjectMain({
 								</div>
 								<p tw={'flex-grow'}>{project.description}</p>
 								<Groups size={2} className={`mt-3`}>
-									{project.tags.map((tag) => (
+									{sort(project.tags).map((tag) => (
 										<ColorBadge key={tag} text={tag} className={'mb-2'} />
 									))}
 								</Groups>
