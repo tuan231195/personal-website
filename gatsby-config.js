@@ -171,5 +171,6 @@ module.exports = {
 				trackingId: 'UA-129291894-4',
 			},
 		},
+		`gatsby-plugin-sitemap`,
 	],
 };
