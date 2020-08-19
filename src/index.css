@@ -5,3 +5,18 @@
 body {
 	font-family: 'Montserrat', sans-serif;
 }
+
+ul.list-colored {
+	list-style: none;
+}
+
+ul.list-colored li::before {
+	@apply text-accent;
+
+	content: '\2022';
+	font-weight: bold;
+	display: inline-block;
+	width: 1rem;
+	font-size: 1.25rem;
+	margin-left: -1rem;
+}

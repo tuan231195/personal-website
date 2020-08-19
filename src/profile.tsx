@@ -36,7 +36,7 @@ export default {
 			company: 'Nine',
 			period: '10/2019 - Present',
 			description: (
-				<ul className={'list-disc'}>
+				<ul className={'list-colored'}>
 					<li>
 						Maintaining a highly scalable single sign on system for 9Now apps
 					</li>
@@ -54,7 +54,7 @@ export default {
 			company: 'Accelo',
 			period: '8/2017 - 10/2019',
 			description: (
-				<ul className={'list-disc'}>
+				<ul className={'list-colored'}>
 					<li>
 						Debugged and resolving 2-3 issues a day accurately and in a timely
 						manner using Jira
@@ -73,7 +73,7 @@ export default {
 			company: 'Itree Pty Ltd',
 			period: '7/2016 - 8/2017',
 			description: (
-				<ul className={'list-disc'}>
+				<ul className={'list-colored'}>
 					<li>
 						Engaged in various stages of the software development life-cycle
 						including design, development, and testing

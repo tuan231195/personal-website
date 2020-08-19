@@ -40,7 +40,32 @@ export const query = graphql`
 
 const Article = styled.main`
 	a {
-		${tw`type-link`};
+		${tw`type-link`}
+	}
+
+	ul,
+	ol {
+		padding: 0.1rem;
+	}
+
+	ol {
+		${tw`list-decimal`}
+		margin-left: 1.25rem;
+		margin-top: 1rem;
+
+		> li {
+			font-weight: 500;
+		}
+	}
+
+	ul li:before {
+		color: ${theme`colors.accent`};
+		font-weight: bold;
+		display: inline-block;
+		width: 1rem;
+		font-size: 1.5rem;
+		transform: translateY(2px);
+		content: '\\2022';
 	}
 
 	p {
