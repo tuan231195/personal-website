@@ -7,7 +7,7 @@ import { Groups } from '~/components/ui/groups/Groups';
 export function BlogRoll({ blogs }: { blogs: Blog[] }) {
 	return (
 		<Groups
-			size={5}
+			size={10}
 			orientation={'vertical'}
 			className={`sm:w-9/12 md:max-w-8/12`}
 		>

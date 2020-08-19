@@ -158,6 +158,13 @@ export default {
 			link: 'https://vdtn359.com',
 		},
 		{
+			name: `Personal website`,
+			description: 'My personal website and blog created using Gatsby',
+			tags: ['React', 'Gatsby', 'Netlify', 'Algolia'],
+			source: 'https://github.com/tuan231195/personal-website',
+			link: 'https://vdtn359.com.au',
+		},
+		{
 			name: 'Yup decorators',
 			description:
 				'An NPM package that adds TypeScript decorators support for the popular validation library Yup',
