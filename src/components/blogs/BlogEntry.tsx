@@ -16,11 +16,11 @@ export function BlogEntry({ blog }: { blog: Blog }) {
 			<article>
 				<header
 					tw={
-						'flex flex-col sm:flex-row sm:items-center sm:justify-between text-gray-700'
+						'flex flex-col mb-3 sm:flex-row sm:items-center sm:justify-between text-gray-700'
 					}
 				>
-					<h5 tw={'type-h5'}>{blog.title}</h5>
-					<time tw={'font-semibold flex items-center'}>
+					<h5 tw={'type-h5 sm:w-2/3 md:w-3/4'}>{blog.title}</h5>
+					<time tw={'font-semibold mt-3 sm:mt-0 flex items-center'}>
 						<Icon
 							size={16}
 							color={'gray-600'}
@@ -30,7 +30,7 @@ export function BlogEntry({ blog }: { blog: Blog }) {
 						{format(new Date(blog.date), 'MMM dd, yyyy')}
 					</time>
 				</header>
-				<Groups size={2} className={`mb-4 mt-2`}>
+				<Groups size={2} className={`mb-4`}>
 					{sort(blog.tags).map((tag) => (
 						<Link to={`/tags/${tag.toLowerCase()}`} key={tag}>
 							<ColorBadge text={tag} />
