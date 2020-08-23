@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Stream Lambda logs to Elasticsearch Service using Terraform
 date: 2020-08-21T11:11:37.800Z
-image: /img/sebastian-boring-8zd7rs8upxu-unsplash.jpg
+image: ./sebastian-boring-8zd7rs8upxu-unsplash.jpg
 tags:
   - AWS
   - Terraform
@@ -259,7 +259,7 @@ To create the resources:
 
 After that, you should be able to check that all your Cloudwatch Logs are now forwarding the streaming Lambda function (logs-to-es)
 
-![](/img/results2.png)
+![](./results2.png)
 
 You can view your Lambda output in Kibana now:
 

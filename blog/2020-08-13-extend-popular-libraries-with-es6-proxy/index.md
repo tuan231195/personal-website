@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Extend popular libraries with ES6 Proxy
 date: 2020-08-13T08:29:42.176Z
-image: /img/josefin-ws5yjfjycny-unsplash.jpg
+image: ./josefin-ws5yjfjycny-unsplash.jpg
 tags:
   - JavaScript
 ---

@@ -32,6 +32,13 @@ module.exports = {
 			},
 		},
 		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: `${__dirname}/blog`,
+				name: `blogs`,
+			},
+		},
+		{
 			resolve: `gatsby-plugin-mdx`,
 			options: {
 				extensions: ['.mdx', '.md'],
@@ -67,13 +74,6 @@ module.exports = {
 			},
 		},
 		`gatsby-plugin-netlify-cms`,
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				path: `${__dirname}/blog`,
-				name: `blogs`,
-			},
-		},
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-postcss`,
 		`gatsby-plugin-emotion`,
@@ -136,8 +136,8 @@ module.exports = {
 								return Object.assign({}, node.frontmatter, {
 									description: node.excerpt,
 									date: node.frontmatter.date,
-									url: site.siteMetadata.siteUrl + node.slug,
-									guid: site.siteMetadata.siteUrl + node.slug,
+									url: `${site.siteMetadata.siteUrl}/blogs/${node.slug}`,
+									guid: `${site.siteMetadata.siteUrl}/blogs/${node.slug}`,
 									custom_elements: [{ 'content:encoded': node.html }],
 								});
 							});

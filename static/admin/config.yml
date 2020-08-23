@@ -17,6 +17,9 @@ collections:
     label: Blog
     folder: blog
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
     create: true
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}

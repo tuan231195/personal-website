@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Easy Lambda Deployment with Terraform
 date: 2020-08-23T04:12:52.588Z
-image: /img/magnezis-magnestic-gislequnnwq-unsplash.jpg
+image: ./magnezis-magnestic-gislequnnwq-unsplash.jpg
 tags:
   - AWS
   - Terraform

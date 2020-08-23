@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Web crawling with Puppeteer and Tor
 date: 2020-08-19T01:29:05.270Z
-image: /img/drew-collins-nrqijf2nvhq-unsplash.jpg
+image: ./drew-collins-nrqijf2nvhq-unsplash.jpg
 tags:
   - JavaScript
   - Puppeteer

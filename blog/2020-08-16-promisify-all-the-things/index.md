@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Promisify all the things
 date: 2020-08-16T06:18:07.481Z
-image: /img/fabrizio-conti-fsri38auqry-unsplash.jpg
+image: ./fabrizio-conti-fsri38auqry-unsplash.jpg
 tags:
   - NodeJS
   - JavaScript

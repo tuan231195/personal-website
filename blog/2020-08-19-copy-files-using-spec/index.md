@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Copy files using spec
 date: 2020-08-19T02:19:12.617Z
-image: /img/sebastian-unrau-cod2q92uaeg-unsplash.jpg
+image: ./sebastian-unrau-cod2q92uaeg-unsplash.jpg
 tags:
   - NodeJS
   - JavaScript
