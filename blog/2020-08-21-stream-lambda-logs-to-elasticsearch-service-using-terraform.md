@@ -263,7 +263,7 @@ After that, you should be able to check that all your Cloudwatch Logs are now fo
 
 You can view your Lambda output in Kibana now:
 
-![](/img/results.png)
+![](/img/kibana-results.png)
 
 Don't forget to destroy the Terraform stack with `terraform destroy --auto-approve`
 
