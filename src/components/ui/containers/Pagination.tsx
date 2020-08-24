@@ -19,7 +19,6 @@ export function Pagination({
 	pageRangeDisplayed?: number;
 }) {
 	const [middlePage, setMiddlePage] = useState(current);
-	console.log(middlePage);
 	const pagesToShow: Set<any> = new Set();
 	for (const page of range(1, Math.min(1 + marginPagesDisplayed, numPages))) {
 		pagesToShow.add(page);
@@ -55,7 +54,7 @@ export function Pagination({
 		<div tw='flex flex-col items-center my-12'>
 			<div tw='flex text-gray-700'>
 				<div
-					tw='h-10 w-10 ml-1 flex justify-center items-center rounded-full bg-gray-200'
+					tw='h-10 w-10 mr-2 flex justify-center items-center rounded-full bg-gray-200'
 					className={cn({
 						'cursor-pointer': isInRange(current - 1, 1, numPages),
 						'opacity-50': !isInRange(current - 1, 1, numPages),
@@ -93,7 +92,7 @@ export function Pagination({
 					))}
 				</div>
 				<div
-					tw='h-10 w-10 ml-1 flex justify-center items-center rounded-full bg-gray-200'
+					tw='h-10 w-10 ml-2 flex justify-center items-center rounded-full bg-gray-200'
 					className={cn({
 						'cursor-pointer': isInRange(current + 1, 1, numPages),
 						'opacity-75': !isInRange(current + 1, 1, numPages),
